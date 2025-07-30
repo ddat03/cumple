@@ -230,10 +230,12 @@ st.markdown("""
     .photo-card {
         background: white;
         border-radius: 15px;
-        padding: 1rem;
+        padding: 0;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         transition: transform 0.3s ease;
         overflow: hidden;
+        min-width: 400px;
+        height: 500px;
     }
     
     .photo-card:hover {
@@ -243,9 +245,9 @@ st.markdown("""
     
     .photo-card img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
-        border-radius: 10px;
+        border-radius: 15px;
     }
     
     .scratch-area {
