@@ -547,22 +547,6 @@ def main_birthday_page():
                 st.session_state.scratch_revealed = False
                 st.rerun()
     
-    
-    # Botón final de celebración
-    
-    # Botón final de celebración
-    st.markdown("""
-    <div class='content-section' style='text-align: center;'>
-        <h2 style='color: #c44569; margin-bottom: 2rem;'>🎉 ¡Celebremos Juntos! 🎉</h2>
-    """, unsafe_allow_html=True)
-    
-    if st.button("🎆 ¡FELIZ CUMPLEAÑOS! 🎆", type="primary"):
-        st.balloons()
-        st.snow()
-        st.success("¡Que todos tus sueños se hagan realidad! 💖✨🎂")
-    
-    st.markdown("</div>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
