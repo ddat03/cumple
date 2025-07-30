@@ -482,10 +482,6 @@ def main_birthday_page():
     # Sección 3: Rasca y Gana
     # Sección 3: Rasca y Gana
     st.markdown("""
-    <div class='content-section'>
-        <h2 class='section-title'>🎁 Sorpresa Musical Especial 🎁</h2>
-    </div>
-    """, unsafe_allow_html=True)
     
     if not st.session_state.scratch_revealed:
         st.markdown("""
@@ -498,7 +494,6 @@ def main_birthday_page():
                 transition: all 0.3s ease;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             '>
-                <h3 style='color: #666; margin-bottom: 1rem;'>🔍 Haz clic para rascar</h3>
                 <div style='font-size: 4rem; margin: 1rem 0;'>🎁</div>
                 <p style='color: #888; font-size: 1.1rem;'>Tu canción especial te está esperando...</p>
                 <p style='color: #999; font-size: 0.9rem; margin-top: 1rem;'>¡Descubre la sorpresa!</p>
@@ -508,7 +503,7 @@ def main_birthday_page():
         
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            if st.button("🎵 ¡RASCAR SORPRESA! 🎵", type="primary", use_container_width=True):
+            if st.button("🎵 ¡PRESIONA! 🎵", type="primary", use_container_width=True):
                 st.session_state.scratch_revealed = True
                 st.balloons()
                 st.rerun()
@@ -557,10 +552,6 @@ def main_birthday_page():
     
     
     # Botón final de celebración
-    st.markdown("""
-    <div class='content-section' style='text-align: center;'>
-        <h2 style='color: #c44569; margin-bottom: 2rem;'>🎉 ¡Celebremos Juntos! 🎉</h2>
-    """, unsafe_allow_html=True)
     
     if st.button("🎆 ¡FELIZ CUMPLEAÑOS! 🎆", type="primary"):
         st.balloons()
