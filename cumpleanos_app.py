@@ -13,89 +13,250 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS personalizado para estilos bonitos
+# CSS personalizado con imagen de fondo y estilos elegantes
 st.markdown("""
 <style>
-    .main-container {
-        background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-        padding: 2rem;
-        border-radius: 20px;
-        margin: 1rem 0;
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+    
+    .stApp {
+        background: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat fixed;
+        background-blend-mode: overlay;
+        background-color: rgba(255, 182, 193, 0.3);
     }
     
-    .heart-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 2rem 0;
+    .main-overlay {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        min-height: 100vh;
+        padding: 2rem 0;
     }
     
-    .heart {
+    .login-container {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 30px;
+        padding: 4rem 3rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
         position: relative;
-        width: 300px;
-        height: 300px;
-        background: linear-gradient(45deg, #ff6b8a, #c44569);
-        margin: 50px auto;
-        transform: rotate(-45deg);
-        border-radius: 50px 50px 0 50px;
-        box-shadow: 0 0 30px rgba(255, 107, 138, 0.6);
-        animation: heartbeat 1.5s ease-in-out infinite;
+        overflow: hidden;
     }
     
-    .heart:before,
-    .heart:after {
+    .login-container::before {
         content: '';
-        width: 150px;
-        height: 240px;
         position: absolute;
-        left: 75px;
-        top: -120px;
-        background: linear-gradient(45deg, #ff6b8a, #c44569);
-        border-radius: 150px 150px 0 0;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+        animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .heart-3d {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 2rem auto;
+        transform: rotate(-45deg);
+        animation: heartbeat3d 2s ease-in-out infinite;
+    }
+    
+    .heart-3d::before,
+    .heart-3d::after {
+        content: '';
+        width: 60px;
+        height: 96px;
+        position: absolute;
+        left: 60px;
+        top: -48px;
+        background: linear-gradient(135deg, #ff6b8a, #ff8fa3, #c44569);
+        border-radius: 60px 60px 0 0;
         transform: rotate(-45deg);
         transform-origin: 0 100%;
+        box-shadow: 0 8px 25px rgba(255, 107, 138, 0.4);
     }
     
-    .heart:after {
-        left: -75px;
+    .heart-3d::after {
+        left: -60px;
         transform: rotate(45deg);
         transform-origin: 100% 100%;
     }
     
-    @keyframes heartbeat {
-        0% { transform: rotate(-45deg) scale(1); }
-        50% { transform: rotate(-45deg) scale(1.1); }
-        100% { transform: rotate(-45deg) scale(1); }
+    .heart-3d {
+        background: linear-gradient(135deg, #ff6b8a, #ff8fa3, #c44569);
+        border-radius: 30px 30px 0 30px;
+        box-shadow: 0 8px 25px rgba(255, 107, 138, 0.4);
     }
     
-    .love-message {
+    @keyframes heartbeat3d {
+        0%, 100% { transform: rotate(-45deg) scale(1); }
+        25% { transform: rotate(-45deg) scale(1.1); }
+        50% { transform: rotate(-45deg) scale(1.05); }
+        75% { transform: rotate(-45deg) scale(1.15); }
+    }
+    
+    .title-elegant {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3.5rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #ff6b8a, #c44569, #8e44ad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .subtitle-elegant {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+    
+    .input-elegant {
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid rgba(255, 107, 138, 0.3);
+        border-radius: 25px;
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
+        box-shadow: inset 0 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .input-elegant:focus {
+        border-color: #ff6b8a;
+        box-shadow: 0 0 20px rgba(255, 107, 138, 0.3);
+        outline: none;
+    }
+    
+    .btn-elegant {
+        background: linear-gradient(45deg, #ff6b8a, #c44569);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(255, 107, 138, 0.3);
+        transition: all 0.3s ease;
+        margin-top: 1.5rem;
+    }
+    
+    .btn-elegant:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(255, 107, 138, 0.4);
+    }
+    
+    .content-section {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 3rem;
+        margin: 3rem auto;
+        max-width: 1000px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .section-title {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2.8rem;
+        font-weight: 600;
+        background: linear-gradient(45deg, #ff6b8a, #c44569);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .love-message-box {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        padding: 2rem;
+        padding: 2.5rem;
         border-radius: 20px;
         margin: 2rem 0;
         text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        position: relative;
+        overflow: hidden;
     }
     
-    .photo-gallery {
-        background: rgba(255, 255, 255, 0.9);
-        padding: 2rem;
-        border-radius: 20px;
+    .love-message-box::before {
+        content: '💖';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        font-size: 4rem;
+        opacity: 0.1;
+    }
+    
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
         margin: 2rem 0;
     }
     
-    .scratch-card {
-        background: #f0f0f0;
-        border: 3px solid #ddd;
+    .photo-card {
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .photo-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    .photo-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    .scratch-area {
+        background: linear-gradient(45deg, #silver, #c0c0c0);
+        border-radius: 15px;
+        padding: 4rem 2rem;
+        text-align: center;
+        margin: 2rem 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .scratch-area:hover {
+        background: linear-gradient(45deg, #b0b0b0, #a0a0a0);
+    }
+    
+    .qr-revealed {
+        background: white;
+        border: 3px solid #ff6b8a;
         border-radius: 15px;
         padding: 2rem;
         text-align: center;
         margin: 2rem 0;
+        box-shadow: 0 15px 40px rgba(255, 107, 138, 0.2);
     }
     
-    .floating-hearts {
+    .floating-elements {
         position: fixed;
         top: 0;
         left: 0;
@@ -103,255 +264,328 @@ st.markdown("""
         height: 100%;
         pointer-events: none;
         z-index: 1000;
+        overflow: hidden;
     }
     
     .floating-heart {
         position: absolute;
-        color: #ff6b8a;
-        font-size: 20px;
-        animation: float 6s ease-in-out infinite;
+        font-size: 25px;
+        animation: float-up 8s linear infinite;
+        opacity: 0.7;
     }
     
-    @keyframes float {
-        0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    @keyframes float-up {
+        0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.7;
+        }
+        90% {
+            opacity: 0.7;
+        }
+        100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    .music-player {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 2rem 0;
+        text-align: center;
+    }
+    
+    .song-item {
+        background: rgba(255, 255, 255, 0.1);
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .song-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.02);
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Función para generar corazones flotantes
-def generate_floating_hearts():
-    hearts_html = "<div class='floating-hearts'>"
-    for i in range(5):
+# Función para generar elementos flotantes
+def generate_floating_elements():
+    elements_html = "<div class='floating-elements'>"
+    emojis = ['💖', '💕', '🌹', '✨', '💝', '🎂', '🎉']
+    for i in range(8):
+        emoji = random.choice(emojis)
         left_pos = random.randint(0, 100)
-        delay = random.uniform(0, 6)
-        hearts_html += f"""
-        <div class='floating-heart' style='left: {left_pos}%; animation-delay: {delay}s;'>💖</div>
+        delay = random.uniform(0, 8)
+        elements_html += f"""
+        <div class='floating-heart' style='left: {left_pos}%; animation-delay: {delay}s;'>{emoji}</div>
         """
-    hearts_html += "</div>"
-    return hearts_html
+    elements_html += "</div>"
+    return elements_html
 
 # Inicializar estado de sesión
 if 'authenticated' not in st.session_state:
     st.session_state.authenticated = False
-if 'photos' not in st.session_state:
-    st.session_state.photos = []
 if 'scratch_revealed' not in st.session_state:
     st.session_state.scratch_revealed = False
 
-# Función de autenticación
-def authenticate():
-    st.markdown("<div class='main-container'>", unsafe_allow_html=True)
+# Función de autenticación elegante
+def elegant_login():
+    # Overlay principal
+    st.markdown("<div class='main-overlay'>", unsafe_allow_html=True)
     
-    # Título principal con emojis
-    st.markdown("""
-    <div style='text-align: center; margin-bottom: 2rem;'>
-        <h1 style='color: #ff6b8a; font-size: 3rem; margin-bottom: 1rem;'>
-            💖 ¡Feliz Cumpleaños Mi Amor! 💖
-        </h1>
-        <h3 style='color: #c44569;'>🎂 Día especial para una persona especial 🎂</h3>
-    </div>
-    """, unsafe_allow_html=True)
+    # Elementos flotantes
+    st.markdown(generate_floating_elements(), unsafe_allow_html=True)
     
-    # Corazones flotantes
-    st.markdown(generate_floating_hearts(), unsafe_allow_html=True)
-    
-    # Contenedor del corazón
-    st.markdown("<div class='heart-container'>", unsafe_allow_html=True)
-    st.markdown("<div class='heart'></div>", unsafe_allow_html=True)
-    
-    # Campo de entrada del código
+    # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown("""
-        <div style='text-align: center; margin: 2rem 0;'>
-            <h3 style='color: #c44569; margin-bottom: 1rem;'>
-                🔐 Ingresa el código secreto del amor 🔐
-            </h3>
+        <div class='login-container'>
+            <div class='heart-3d'></div>
+            <h1 class='title-elegant'>Feliz Cumpleaños</h1>
+            <p class='subtitle-elegant'>Mi Amor Eterno ✨</p>
+            <p style='color: #888; margin-bottom: 2rem; font-style: italic;'>
+                "Cada día contigo es una celebración,<br>
+                pero hoy es especialmente mágico"
+            </p>
         </div>
         """, unsafe_allow_html=True)
         
-        code = st.text_input("", placeholder="Código de amor...", type="password", key="love_code")
+        # Input personalizado con HTML
+        st.markdown("""
+        <div style='margin-top: -80px; position: relative; z-index: 10;'>
+            <p style='text-align: center; color: #c44569; font-weight: 600; margin-bottom: 1rem;'>
+                🔐 Código del Corazón 🔐
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
         
-        if st.button("💝 Abrir mi regalo 💝", type="primary"):
+        code = st.text_input("", placeholder="Ingresa nuestro número especial...", type="password", key="love_code")
+        
+        # Botón personalizado
+        if st.button("💝 Abrir mi Corazón 💝", type="primary"):
             if code == "12345":
                 st.session_state.authenticated = True
                 st.balloons()
-                st.success("¡Código correcto! 💖 ¡Bienvenida a tu sorpresa de cumpleaños!")
+                st.success("¡Código correcto! 💖 ¡Bienvenida a tu día especial!")
                 time.sleep(2)
                 st.rerun()
             else:
-                st.error("Código incorrecto 💔 ¡Inténtalo de nuevo!")
+                st.error("💔 Intenta de nuevo, mi amor...")
     
     st.markdown("</div>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
 
-# Página principal después de autenticación
-def main_page():
-    # Título de bienvenida
+# Página principal con todas las secciones
+def main_birthday_page():
+    # Overlay principal
+    st.markdown("<div class='main-overlay'>", unsafe_allow_html=True)
+    
+    # Elementos flotantes
+    st.markdown(generate_floating_elements(), unsafe_allow_html=True)
+    
+    # Título principal
     st.markdown("""
-    <div style='text-align: center; margin-bottom: 2rem;'>
-        <h1 style='color: #ff6b8a; font-size: 3rem; margin-bottom: 1rem;'>
-            🌟 ¡Sorpresa de Cumpleaños! 🌟
-        </h1>
-        <h3 style='color: #c44569;'>✨ Un día mágico para ti ✨</h3>
+    <div class='content-section'>
+        <h1 class='section-title'>🌟 Tu Día Especial Ha Llegado 🌟</h1>
+        <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
+            Un día lleno de amor, sorpresas y momentos mágicos solo para ti ✨
+        </p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Crear pestañas para las diferentes secciones
-    tab1, tab2, tab3, tab4 = st.tabs(["💝 Mensaje de Amor", "📸 Galería de Recuerdos", "🎁 Rasca y Gana", "🎵 Sorpresa Musical"])
-    
-    with tab1:
-        message_section()
-    
-    with tab2:
-        photo_gallery_section()
-    
-    with tab3:
-        scratch_card_section()
-    
-    with tab4:
-        music_section()
-
-# Sección de mensaje de amor
-def message_section():
+    # Sección 1: Mensaje de Amor
     st.markdown("""
-    <div class='love-message'>
-        <h2>💖 Mensaje Especial Para Ti 💖</h2>
-        <p style='font-size: 1.3rem; line-height: 1.6; margin: 2rem 0;'>
-            En este día tan especial, quiero que sepas que eres la luz de mis días,
-            la melodía de mis noches y la razón de mi sonrisa cada mañana.
-            Tu cumpleaños no es solo la celebración de un año más de vida,
-            sino la celebración del amor más puro y hermoso que existe.
-        </p>
-        <p style='font-size: 1.2rem; font-style: italic;'>
-            ¡Que este nuevo año esté lleno de aventuras juntos, risas infinitas,
-            sueños cumplidos y todo el amor que mereces! 🌹
-        </p>
-        <h3 style='margin-top: 2rem;'>¡Te amo más de lo que las palabras pueden expresar! 💕</h3>
+    <div class='content-section'>
+        <h2 class='section-title'>💖 Carta de Amor 💖</h2>
+        <div class='love-message-box'>
+            <h3 style='margin-bottom: 2rem; font-size: 2rem;'>Para la Mujer Más Especial</h3>
+            <p style='font-size: 1.4rem; line-height: 1.8; margin: 2rem 0;'>
+                En este día tan especial, quiero que sepas que eres la razón por la cual 
+                cada amanecer es una promesa de felicidad. Tu sonrisa ilumina mis días más oscuros,
+                tu risa es la melodía más hermosa que he escuchado, y tu amor es el regalo 
+                más preciado que la vida me ha dado.
+            </p>
+            <p style='font-size: 1.3rem; line-height: 1.6; font-style: italic;'>
+                Que este nuevo año de vida esté lleno de sueños cumplidos, aventuras increíbles,
+                momentos de pura felicidad y todo el amor que tu corazón puede contener.
+            </p>
+            <h3 style='margin-top: 2.5rem; font-size: 1.8rem;'>
+                ¡Te amo más allá de las palabras! 💕✨
+            </h3>
+        </div>
     </div>
     """, unsafe_allow_html=True)
     
-    # Botón para efectos especiales
-    if st.button("🎆 ¡Celebrar! 🎆"):
-        st.balloons()
-        st.snow()
-
-# Sección de galería de fotos
-def photo_gallery_section():
-    st.markdown("<div class='photo-gallery'>", unsafe_allow_html=True)
-    st.markdown("### 📸 Nuestros Momentos Especiales 📸")
+    # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
+    st.markdown("""
+    <div class='content-section'>
+        <h2 class='section-title'>📸 Nuestros Momentos Mágicos 📸</h2>
+        <div class='photo-grid'>
+            <div class='photo-card'>
+                <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momento especial'>
+                <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>💕 Primera Cita</h4>
+                <p style='text-align: center; color: #888; font-size: 0.9rem;'>El día que cambió todo</p>
+            </div>
+            <div class='photo-card'>
+                <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Celebrando juntos'>
+                <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🎉 Celebrando Juntos</h4>
+                <p style='text-align: center; color: #888; font-size: 0.9rem;'>Momentos de felicidad pura</p>
+            </div>
+            <div class='photo-card'>
+                <img src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Aventuras'>
+                <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🌟 Nuestras Aventuras</h4>
+                <p style='text-align: center; color: #888; font-size: 0.9rem;'>Explorando el mundo juntos</p>
+            </div>
+            <div class='photo-card'>
+                <img src='https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momentos íntimos'>
+                <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>💖 Momentos Íntimos</h4>
+                <p style='text-align: center; color: #888; font-size: 0.9rem;'>Solo tú y yo</p>
+            </div>
+            <div class='photo-card'>
+                <img src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Cumpleaños anteriores'>
+                <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🎂 Cumpleaños Anteriores</h4>
+                <p style='text-align: center; color: #888; font-size: 0.9rem;'>Cada año más especial</p>
+            </div>
+            <div class='photo-card'>
+                <img src='https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Planes futuros'>
+                <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🌈 Nuestro Futuro</h4>
+                <p style='text-align: center; color: #888; font-size: 0.9rem;'>Infinitas posibilidades</p>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
-    # Subir fotos
-    uploaded_files = st.file_uploader(
-        "Agrega nuestras fotos favoritas 💕", 
-        accept_multiple_files=True, 
-        type=['png', 'jpg', 'jpeg']
-    )
-    
-    if uploaded_files:
-        st.session_state.photos = uploaded_files
-    
-    # Mostrar galería
-    if st.session_state.photos:
-        cols = st.columns(3)
-        for idx, photo in enumerate(st.session_state.photos):
-            with cols[idx % 3]:
-                st.image(photo, caption=f"Recuerdo {idx + 1} 💕", use_container_width=True)
-                if st.button(f"❤️", key=f"like_{idx}"):
-                    st.write("¡Me encanta este momento! 💖")
-    
-    st.markdown("</div>", unsafe_allow_html=True)
-
-# Sección de rasca y gana
-def scratch_card_section():
-    st.markdown("<div class='scratch-card'>", unsafe_allow_html=True)
-    st.markdown("### 🎁 Rasca y Descubre tu Sorpresa 🎁")
+    # Sección 3: Rasca y Gana
+    st.markdown("""
+    <div class='content-section'>
+        <h2 class='section-title'>🎁 Sorpresa Musical Especial 🎁</h2>
+    """, unsafe_allow_html=True)
     
     if not st.session_state.scratch_revealed:
         st.markdown("""
-        <div style='background: silver; padding: 3rem; border-radius: 10px; margin: 2rem 0;'>
-            <h3 style='color: #666; text-align: center;'>
-                🔍 Haz clic en "Rascar" para descubrir tu sorpresa musical 🔍
-            </h3>
+        <div class='scratch-area' onclick='this.style.display="none"; document.getElementById("qr-section").style.display="block";'>
+            <h3 style='color: #666; margin-bottom: 1rem;'>🔍 Rasca aquí para descubrir</h3>
+            <p style='color: #888; font-size: 1.1rem;'>Tu canción especial te está esperando...</p>
+            <div style='font-size: 3rem; margin: 1rem 0;'>🎵</div>
+            <p style='color: #999; font-size: 0.9rem;'>Haz clic para rascar</p>
         </div>
         """, unsafe_allow_html=True)
         
-        if st.button("✨ Rascar ✨", type="primary"):
+        if st.button("✨ Rascar Sorpresa ✨", type="primary"):
             st.session_state.scratch_revealed = True
             st.balloons()
             st.rerun()
-    else:
-        # Mostrar código QR (aquí puedes poner el código QR real de la canción de Spotify)
+    
+    if st.session_state.scratch_revealed:
         st.markdown("""
-        <div style='text-align: center; padding: 2rem;'>
-            <h2>🎵 ¡Tu Canción Especial! 🎵</h2>
-            <p>Escanea este código QR para escuchar nuestra canción ❤️</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        # Aquí deberías reemplazar con el QR real de tu canción de Spotify
-        st.markdown("""
-        <div style='display: flex; justify-content: center; margin: 2rem 0;'>
-            <div style='border: 3px solid #ff6b8a; padding: 1rem; border-radius: 10px; background: white;'>
-                <p style='font-size: 4rem; margin: 0;'>📱</p>
-                <p style='margin: 0.5rem 0 0 0; color: #666;'>Código QR</p>
-                <p style='margin: 0; color: #999; font-size: 0.8rem;'>
-                    (Reemplaza con tu QR real)
-                </p>
+        <div class='qr-revealed'>
+            <h3 style='color: #c44569; margin-bottom: 1rem;'>🎵 ¡Tu Canción del Corazón! 🎵</h3>
+            <p style='color: #666; margin-bottom: 2rem;'>Escanea este código QR para escuchar nuestra melodía especial 💕</p>
+            <div style='display: flex; justify-content: center; margin: 2rem 0;'>
+                <div style='border: 3px solid #ff6b8a; padding: 2rem; border-radius: 15px; background: white;'>
+                    <div style='font-size: 6rem; margin: 0;'>📱</div>
+                    <p style='margin: 1rem 0 0 0; color: #666; font-weight: 600;'>Código QR Spotify</p>
+                    <p style='margin: 0.5rem 0 0 0; color: #999; font-size: 0.8rem;'>
+                        (Aquí va tu QR real)
+                    </p>
+                </div>
             </div>
+            <p style='color: #888; font-style: italic;'>
+                "Esta canción siempre me recuerda a nosotros..." 💖
+            </p>
         </div>
         """, unsafe_allow_html=True)
         
-        if st.button("🔄 Rascar de nuevo"):
+        if st.button("🔄 Ocultar y rascar de nuevo"):
             st.session_state.scratch_revealed = False
             st.rerun()
     
     st.markdown("</div>", unsafe_allow_html=True)
-
-# Sección musical adicional
-def music_section():
-    st.markdown("### 🎵 Playlist de Cumpleaños 🎵")
     
-    # Lista de canciones románticas
-    songs = [
-        "💕 Perfect - Ed Sheeran",
-        "🌹 All of Me - John Legend", 
-        "💖 Thinking Out Loud - Ed Sheeran",
-        "✨ A Thousand Years - Christina Perri",
-        "🎶 Make You Feel My Love - Adele"
-    ]
+    # Sección 4: Playlist Musical
+    st.markdown("""
+    <div class='content-section'>
+        <h2 class='section-title'>🎵 Playlist de Nuestro Amor 🎵</h2>
+        <div class='music-player'>
+            <h3 style='margin-bottom: 2rem;'>💕 Canciones que cuentan nuestra historia</h3>
+            <div class='song-item'>
+                <h4>🌹 "Perfect" - Ed Sheeran</h4>
+                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Porque eres perfecta para mí"</p>
+            </div>
+            <div class='song-item'>
+                <h4>💖 "All of Me" - John Legend</h4>
+                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Todo de mí ama todo de ti"</p>
+            </div>
+            <div class='song-item'>
+                <h4>✨ "A Thousand Years" - Christina Perri</h4>
+                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Te amaré por mil años más"</p>
+            </div>
+            <div class='song-item'>
+                <h4>🎶 "Thinking Out Loud" - Ed Sheeran</h4>
+                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Cuando tus piernas ya no funcionen como antes"</p>
+            </div>
+        </div>
+        
+        <div style='margin-top: 2rem; text-align: center;'>
+            <h4 style='color: #c44569; margin-bottom: 1rem;'>💌 Dedica una canción especial:</h4>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
-    selected_song = st.selectbox("🎧 Elige una canción para dedicar:", songs)
-    
-    if st.button("🎼 Dedicar esta canción 🎼"):
-        st.success(f"¡Has dedicado: {selected_song}! 💝")
-        st.balloons()
-    
-    # Crear playlist personalizada
-    st.markdown("#### 🎵 Crea tu mensaje musical:")
+    # Dedicatoria musical
     user_message = st.text_area(
-        "Escribe un mensaje con la canción:",
-        placeholder="Esta canción me recuerda a ti porque..."
+        "Escribe tu dedicatoria musical:",
+        placeholder="Esta canción me recuerda a ti porque...",
+        height=100
     )
     
     if user_message:
         st.markdown(f"""
-        <div style='background: linear-gradient(135deg, #ff9a9e, #fecfef); 
-                    padding: 1rem; border-radius: 10px; margin: 1rem 0;'>
-            <p style='font-style: italic; color: #333;'>"{user_message}"</p>
-            <p style='text-align: right; color: #666;'>- Con amor 💕</p>
+        <div class='content-section'>
+            <div style='background: linear-gradient(135deg, #ff9a9e, #fecfef); 
+                        padding: 2rem; border-radius: 15px; margin: 2rem 0;'>
+                <p style='font-size: 1.2rem; font-style: italic; color: #333; line-height: 1.6;'>
+                    "{user_message}"
+                </p>
+                <p style='text-align: right; color: #666; margin-top: 1rem; font-weight: 600;'>
+                    - Con todo mi amor 💕
+                </p>
+            </div>
         </div>
         """, unsafe_allow_html=True)
+    
+    # Botón final de celebración
+    st.markdown("""
+    <div class='content-section' style='text-align: center;'>
+        <h2 style='color: #c44569; margin-bottom: 2rem;'>🎉 ¡Celebremos Juntos! 🎉</h2>
+    """, unsafe_allow_html=True)
+    
+    if st.button("🎆 ¡FELIZ CUMPLEAÑOS! 🎆", type="primary"):
+        st.balloons()
+        st.snow()
+        st.success("¡Que todos tus sueños se hagan realidad! 💖✨🎂")
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
     if not st.session_state.authenticated:
-        authenticate()
+        elegant_login()
     else:
-        main_page()
+        main_birthday_page()
         
-        # Botón para cerrar sesión
-        if st.sidebar.button("🚪 Salir"):
-            st.session_state.authenticated = False
-            st.rerun()
+        # Botón para cerrar sesión en la barra lateral
+        with st.sidebar:
+            st.markdown("### 🚪 Opciones")
+            if st.button("Cerrar Sesión"):
+                st.session_state.authenticated = False
+                st.rerun()
