@@ -465,18 +465,15 @@ def main_birthday_page():
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momentos íntimos'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>💖 Momentos Íntimos</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>Solo tú y yo</p>
+            
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Cumpleaños anteriores'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🎂 Cumpleaños Anteriores</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>Cada año más especial</p>
+                   
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Planes futuros'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🌈 Nuestro Futuro</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>Infinitas posibilidades</p>
+                  
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momento especial'>
