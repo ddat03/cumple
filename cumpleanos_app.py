@@ -481,6 +481,9 @@ def main_birthday_page():
    """, unsafe_allow_html=True)
     # Sección 3: Rasca y Gana
     # Sección 3: Rasca y Gana
+    # Sección 3: Rasca y Gana
+    import streamlit.components.v1 as components
+    
     st.markdown("""
     <div class='content-section'>
         <h2 class='section-title'>🎁 Sorpresa Musical Especial 🎁</h2>
@@ -488,183 +491,136 @@ def main_birthday_page():
             <p style='color: #666; font-size: 1.2rem; margin-bottom: 1rem;'>
                 🔍 Rasca con el mouse para descubrir tu sorpresa
             </p>
-            <canvas id='scratchCanvas' width='600' height='400' style='
-                border: 3px solid #ff6b8a; 
-                border-radius: 15px; 
-                cursor: crosshair;
-                background: linear-gradient(45deg, #silver, #c0c0c0);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            '></canvas>
-            <p style='color: #888; font-size: 0.9rem; margin-top: 1rem;'>
-                Mantén presionado el mouse y arrastra para raspar
-            </p>
         </div>
-        
-        <script>
-            const canvas = document.getElementById('scratchCanvas');
-            const ctx = canvas.getContext('2d');
-            let isDrawing = false;
-            let scratchPercentage = 0;
-            
-            // Crear la imagen de fondo oculta
-            const hiddenContent = () => {
-                ctx.fillStyle = '#fff';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                // QR Code simulado
-                ctx.fillStyle = '#ff6b8a';
-                ctx.fillRect(200, 100, 200, 200);
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 20px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText('🎵 QR CODE 🎵', 300, 150);
-                ctx.fillText('Spotify Song', 300, 180);
-                ctx.fillText('💖', 300, 220);
-                
-                // Texto alrededor
-                ctx.fillStyle = '#c44569';
-                ctx.font = 'bold 24px Arial';
-                ctx.fillText('¡Tu Canción Especial!', 300, 50);
-                ctx.font = '16px Arial';
-                ctx.fillText('Escanea para escuchar nuestra melodía', 300, 350);
-            };
-            
-            // Crear la capa de rascar
-            const createScratchLayer = () => {
-                ctx.globalCompositeOperation = 'source-over';
-                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-                gradient.addColorStop(0, '#c0c0c0');
-                gradient.addColorStop(0.5, '#silver');
-                gradient.addColorStop(1, '#a0a0a0');
-                ctx.fillStyle = gradient;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                // Texto de instrucción
-                ctx.fillStyle = '#666';
-                ctx.font = 'bold 28px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText('🎁 RASCA AQUÍ 🎁', 300, 180);
-                ctx.font = '18px Arial';
-                ctx.fillText('Mantén presionado y arrastra', 300, 220);
-                ctx.fillText('para descubrir tu sorpresa', 300, 245);
-            };
-            
-            // Función de rascar
-            const scratch = (x, y) => {
-                ctx.globalCompositeOperation = 'destination-out';
-                ctx.beginPath();
-                ctx.arc(x, y, 25, 0, 2 * Math.PI);
-                ctx.fill();
-            };
-            
-            // Calcular porcentaje raspado
-            const calculateScratchPercentage = () => {
-                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                const pixels = imageData.data;
-                let transparentPixels = 0;
-                
-                for (let i = 3; i < pixels.length; i += 4) {
-                    if (pixels[i] === 0) transparentPixels++;
-                }
-                
-                return (transparentPixels / (canvas.width * canvas.height)) * 100;
-            };
-            
-            // Revelar completamente si se raspa más del 30%
-            const checkReveal = () => {
-                scratchPercentage = calculateScratchPercentage();
-                if (scratchPercentage > 30) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    hiddenContent();
-                    canvas.style.cursor = 'default';
-                    
-                    // Efecto de celebración
-                    setTimeout(() => {
-                        // Crear elementos de celebración
-                        const celebration = document.createElement('div');
-                        celebration.innerHTML = '🎉 ¡Sorpresa revelada! 🎉';
-                        celebration.style.cssText = `
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            background: linear-gradient(45deg, #ff6b8a, #c44569);
-                            color: white;
-                            padding: 1rem 2rem;
-                            border-radius: 25px;
-                            font-size: 1.5rem;
-                            font-weight: bold;
-                            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                            z-index: 1000;
-                            animation: bounce 1s ease;
-                        `;
-                        canvas.parentNode.style.position = 'relative';
-                        canvas.parentNode.appendChild(celebration);
-                        
-                        setTimeout(() => celebration.remove(), 3000);
-                    }, 500);
-                }
-            };
-            
-            // Inicializar
-            hiddenContent();
-            createScratchLayer();
-            
-            // Event listeners
-            canvas.addEventListener('mousedown', (e) => {
-                isDrawing = true;
-                const rect = canvas.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                scratch(x, y);
-            });
-            
-            canvas.addEventListener('mousemove', (e) => {
-                if (!isDrawing) return;
-                const rect = canvas.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                scratch(x, y);
-            });
-            
-            canvas.addEventListener('mouseup', () => {
-                isDrawing = false;
-                checkReveal();
-            });
-            
-            canvas.addEventListener('mouseleave', () => {
-                isDrawing = false;
-            });
-            
-            // Touch events para móviles
-            canvas.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                isDrawing = true;
-                const rect = canvas.getBoundingClientRect();
-                const touch = e.touches[0];
-                const x = touch.clientX - rect.left;
-                const y = touch.clientY - rect.top;
-                scratch(x, y);
-            });
-            
-            canvas.addEventListener('touchmove', (e) => {
-                e.preventDefault();
-                if (!isDrawing) return;
-                const rect = canvas.getBoundingClientRect();
-                const touch = e.touches[0];
-                const x = touch.clientX - rect.left;
-                const y = touch.clientY - rect.top;
-                scratch(x, y);
-            });
-            
-            canvas.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                isDrawing = false;
-                checkReveal();
-            });
-        </script>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Canvas interactivo con JavaScript
+    components.html("""
+    <div style='text-align: center;'>
+        <canvas id='scratchCanvas' width='600' height='400' style='
+            border: 3px solid #ff6b8a; 
+            border-radius: 15px; 
+            cursor: crosshair;
+            background: linear-gradient(45deg, #silver, #c0c0c0);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        '></canvas>
+        <p style='color: #888; font-size: 0.9rem; margin-top: 1rem;'>
+            Mantén presionado el mouse y arrastra para raspar
+        </p>
+    </div>
+    
+    <script>
+        const canvas = document.getElementById('scratchCanvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let scratchPercentage = 0;
+        
+        // Crear la imagen de fondo oculta
+        const hiddenContent = () => {
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // QR Code simulado
+            ctx.fillStyle = '#ff6b8a';
+            ctx.fillRect(200, 100, 200, 200);
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('🎵 QR CODE 🎵', 300, 150);
+            ctx.fillText('Spotify Song', 300, 180);
+            ctx.fillText('💖', 300, 220);
+            
+            // Texto alrededor
+            ctx.fillStyle = '#c44569';
+            ctx.font = 'bold 24px Arial';
+            ctx.fillText('¡Tu Canción Especial!', 300, 50);
+            ctx.font = '16px Arial';
+            ctx.fillText('Escanea para escuchar nuestra melodía', 300, 350);
+        };
+        
+        // Crear la capa de rascar
+        const createScratchLayer = () => {
+            ctx.globalCompositeOperation = 'source-over';
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#c0c0c0');
+            gradient.addColorStop(0.5, '#silver');
+            gradient.addColorStop(1, '#a0a0a0');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Texto de instrucción
+            ctx.fillStyle = '#666';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('🎁 RASCA AQUÍ 🎁', 300, 180);
+            ctx.font = '18px Arial';
+            ctx.fillText('Mantén presionado y arrastra', 300, 220);
+            ctx.fillText('para descubrir tu sorpresa', 300, 245);
+        };
+        
+        // Función de rascar
+        const scratch = (x, y) => {
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.beginPath();
+            ctx.arc(x, y, 25, 0, 2 * Math.PI);
+            ctx.fill();
+        };
+        
+        // Calcular porcentaje raspado
+        const calculateScratchPercentage = () => {
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const pixels = imageData.data;
+            let transparentPixels = 0;
+            
+            for (let i = 3; i < pixels.length; i += 4) {
+                if (pixels[i] === 0) transparentPixels++;
+            }
+            
+            return (transparentPixels / (canvas.width * canvas.height)) * 100;
+        };
+        
+        // Revelar completamente si se raspa más del 30%
+        const checkReveal = () => {
+            scratchPercentage = calculateScratchPercentage();
+            if (scratchPercentage > 30) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                hiddenContent();
+                canvas.style.cursor = 'default';
+            }
+        };
+        
+        // Inicializar
+        hiddenContent();
+        createScratchLayer();
+        
+        // Event listeners
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            scratch(x, y);
+        });
+        
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            scratch(x, y);
+        });
+        
+        canvas.addEventListener('mouseup', () => {
+            isDrawing = false;
+            checkReveal();
+        });
+        
+        canvas.addEventListener('mouseleave', () => {
+            isDrawing = false;
+        });
+    </script>
+    """, height=500)
     
     # Sección 4: Playlist Musical
     st.markdown("""
