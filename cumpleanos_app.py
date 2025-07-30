@@ -6,6 +6,11 @@ import time
 import random
 import streamlit.components.v1 as components
 
+def get_base64_image(image_path):
+    """Convierte imagen local a base64 para usar en HTML"""
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
 # Configuración de la página
 st.set_page_config(
     page_title="💖 Feliz Cumpleaños Mi Amor 💖",
@@ -452,7 +457,7 @@ def main_birthday_page():
        <div class='photo-grid'>
            <div class='photo-scroll'>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Momento especial' style='height: 400px; border-radius: 15px; padding: 0;'>
+                   <img src='data:image/jpeg;base64,{get_base64_image("1.jpeg")}' alt='1'>;'>
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Celebrando juntos' style='height: 400px; border-radius: 15px; padding: 0;'>
