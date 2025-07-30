@@ -530,9 +530,6 @@ def main_birthday_page():
                         </p>
                     </div>
                 </div>
-                <p style='color: #888; font-style: italic;'>
-                    "Esta canción siempre me recuerda a nosotros..." 💖
-                </p>
             </div>
         </div>
         
