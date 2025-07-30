@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw
 import io
 import time
 import random
+import streamlit.components.v1 as components
 
 # Configuración de la página
 st.set_page_config(
@@ -339,7 +340,7 @@ if 'scratch_revealed' not in st.session_state:
 # Función de autenticación elegante
 def elegant_login():
     # Overlay principal
-    st.markdown("<div class='main-overlay'>", unsafe_allow_html=True)
+    st.components.v1.html(generate_floating_elements(), height=0)
     
     # Elementos flotantes
     st.markdown(generate_floating_elements(), unsafe_allow_html=True)
@@ -389,7 +390,8 @@ def main_birthday_page():
     st.markdown("<div class='main-overlay'>", unsafe_allow_html=True)
     
     # Elementos flotantes
-    st.markdown(generate_floating_elements(), unsafe_allow_html=True)
+    st.components.v1.html(generate_floating_elements(), height=0)
+
     
     # Título principal
     st.markdown("""
