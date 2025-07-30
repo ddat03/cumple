@@ -340,10 +340,10 @@ if 'scratch_revealed' not in st.session_state:
 # Función de autenticación elegante
 def elegant_login():
     # Overlay principal
-    st.components.v1.html(generate_floating_elements(), height=0)
+    #st.components.v1.html(generate_floating_elements(), height=0)
     
     # Elementos flotantes
-    st.markdown(generate_floating_elements(), unsafe_allow_html=True)
+    #st.markdown(generate_floating_elements(), unsafe_allow_html=True)
     
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -390,7 +390,7 @@ def main_birthday_page():
     st.markdown("<div class='main-overlay'>", unsafe_allow_html=True)
     
     # Elementos flotantes
-    st.components.v1.html(generate_floating_elements(), height=0)
+    #st.components.v1.html(generate_floating_elements(), height=0)
 
     
     # Título principal
