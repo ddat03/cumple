@@ -450,36 +450,33 @@ def main_birthday_page():
        <div class='photo-grid'>
            <div class='photo-scroll'>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momento especial'>
+                   <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Momento especial' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Celebrando juntos'>
+                   <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Celebrando juntos' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Aventuras'>
+                   <img src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Aventuras' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momentos íntimos'>
-            
+                   <img src='https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Momentos íntimos' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Cumpleaños anteriores'>
-                   
+                   <img src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Cumpleaños anteriores' style='height: 400px; border-radius: 15px; padding: 0;'>       
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Planes futuros'>
+                   <img src='https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Planes futuros' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momento especial'>
+                   <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Momento especial' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Celebrando juntos'>
+                   <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Celebrando juntos' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
            </div>
        </div>
    </div>
    """, unsafe_allow_html=True)
-    
     # Sección 3: Rasca y Gana
     st.markdown("""
     <div class='content-section'>
