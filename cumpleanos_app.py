@@ -623,21 +623,6 @@ def main_birthday_page():
     """, height=500)
     
     
-    if user_message:
-        st.markdown(f"""
-        <div class='content-section'>
-            <div style='background: linear-gradient(135deg, #ff9a9e, #fecfef); 
-                        padding: 2rem; border-radius: 15px; margin: 2rem 0;'>
-                <p style='font-size: 1.2rem; font-style: italic; color: #333; line-height: 1.6;'>
-                    "{user_message}"
-                </p>
-                <p style='text-align: right; color: #666; margin-top: 1rem; font-weight: 600;'>
-                    - Con todo mi amor 💕
-                </p>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-    
     # Botón final de celebración
     st.markdown("""
     <div class='content-section' style='text-align: center;'>
