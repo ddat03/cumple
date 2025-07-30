@@ -559,7 +559,6 @@ def main_birthday_page():
         st.success("¡Que todos tus sueños se hagan realidad! 💖✨🎂")
     
     st.markdown("</div>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
