@@ -622,42 +622,6 @@ def main_birthday_page():
     </script>
     """, height=500)
     
-    # Sección 4: Playlist Musical
-    st.markdown("""
-    <div class='content-section'>
-        <h2 class='section-title'>🎵 Playlist de Nuestro Amor 🎵</h2>
-        <div class='music-player'>
-            <h3 style='margin-bottom: 2rem;'>💕 Canciones que cuentan nuestra historia</h3>
-            <div class='song-item'>
-                <h4>🌹 "Perfect" - Ed Sheeran</h4>
-                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Porque eres perfecta para mí"</p>
-            </div>
-            <div class='song-item'>
-                <h4>💖 "All of Me" - John Legend</h4>
-                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Todo de mí ama todo de ti"</p>
-            </div>
-            <div class='song-item'>
-                <h4>✨ "A Thousand Years" - Christina Perri</h4>
-                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Te amaré por mil años más"</p>
-            </div>
-            <div class='song-item'>
-                <h4>🎶 "Thinking Out Loud" - Ed Sheeran</h4>
-                <p style='font-style: italic; margin: 0.5rem 0 0 0;'>"Cuando tus piernas ya no funcionen como antes"</p>
-            </div>
-        </div>
-        
-        <div style='margin-top: 2rem; text-align: center;'>
-            <h4 style='color: #c44569; margin-bottom: 1rem;'>💌 Dedica una canción especial:</h4>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Dedicatoria musical
-    user_message = st.text_area(
-        "Escribe tu dedicatoria musical:",
-        placeholder="Esta canción me recuerda a ti porque...",
-        height=100
-    )
     
     if user_message:
         st.markdown(f"""
