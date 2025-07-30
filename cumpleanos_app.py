@@ -52,7 +52,8 @@ st.markdown("""
         top: -50%;
         left: -50%;
         width: 200%;
-        height: 200%;
+        height: 200%
+        ;
         background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
         animation: shimmer 3s infinite;
     }
@@ -450,18 +451,12 @@ def main_birthday_page():
            <div class='photo-scroll'>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momento especial'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>💕 Primera Cita</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>El día que cambió todo</p>
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Celebrando juntos'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🎉 Celebrando Juntos</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>Momentos de felicidad pura</p>
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Aventuras'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🌟 Nuestras Aventuras</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>Explorando el mundo juntos</p>
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momentos íntimos'>
@@ -473,17 +468,12 @@ def main_birthday_page():
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Planes futuros'>
-                  
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Momento especial'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>💕 Primera Cita</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>El día que cambió todo</p>
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80' alt='Celebrando juntos'>
-                   <h4 style='text-align: center; margin: 1rem 0 0.5rem 0; color: #c44569;'>🎉 Celebrando Juntos</h4>
-                   <p style='text-align: center; color: #888; font-size: 0.9rem;'>Momentos de felicidad pura</p>
                </div>
            </div>
        </div>
