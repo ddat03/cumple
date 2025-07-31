@@ -29,28 +29,6 @@ st.write("🔍 **DEBUG INFO:**")
 st.write("Directorio actual:", os.getcwd())
 st.write("Archivos en el directorio:", os.listdir("."))
 
-if os.path.exists("images"):
-    st.write("✅ Carpeta 'images' existe")
-    st.write("Archivos en images/:", os.listdir("images"))
-else:
-    st.write("❌ Carpeta 'images' NO existe")
-
-# Prueba cargar una imagen específica
-test_path = "images/1.jpeg"  # Cambia por el nombre real de tu foto
-if os.path.exists(test_path):
-    st.write(f"✅ Archivo {test_path} existe")
-    try:
-        encoded = get_base64_image(test_path)
-        st.write(f"✅ Imagen codificada exitosamente (primeros 50 caracteres): {encoded[:50]}...")
-    except Exception as e:
-        st.write(f"❌ Error al codificar: {e}")
-else:
-    st.write(f"❌ Archivo {test_path} NO existe")
-
-
-
-
-
 # Configuración de la página
 st.set_page_config(
     page_title="💖 Feliz Cumpleaños Mi Amor 💖",
@@ -491,34 +469,37 @@ def main_birthday_page():
     """, unsafe_allow_html=True)
     
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
-    st.markdown("""
-   <div class='content-section'>
-       <h2 class='section-title'>📸 Nuestros Momentos Mágicos 📸</h2>
-       <div class='photo-grid'>
-           <div class='photo-scroll'>
-               <div class='photo-card'>
-                    <img src='{get_base64_image("images/1.jpeg")}' 
-                         alt='1' style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-               <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("images/2.jpeg")}' alt='2'style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-               <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("images/3.jpeg")}' alt='3'style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-               <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("images/4.jpeg")}' alt='4'style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-               <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("images/5.jpeg")}' alt='5'style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-               <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("images/6.jpeg")}' alt='6'style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-           </div>
-       </div>
-   </div>
-   """, unsafe_allow_html=True)
+    fotos_locales = [
+    "images/1.jpeg",
+    "images/2.jpeg",  # Agrega las que tengas
+    "images/3.jpeg",
+    "images/4.jpeg",
+    "images/5.jpeg",
+    "images/6.jpeg"
+]
+
+# Generar HTML para todas las fotos
+    foto_html = ""
+    for i, foto in enumerate(fotos_locales):
+        if os.path.exists(foto):  # Solo agregar si existe
+            foto_html += f"""
+            <div class='photo-card'>
+                <img src='{get_base64_image(foto)}' 
+                     alt='Momento especial {i+1}' style='height: 400px; border-radius: 15px; padding: 0;'>
+            </div>
+            """
+    
+    st.markdown(f"""
+    <div class='content-section'>
+        <h2 class='section-title'>📸 Nuestros Momentos Mágicos 📸</h2>
+        <div class='photo-grid'>
+            <div class='photo-scroll'>
+                {foto_html}
+                {foto_html}  <!-- Duplicado para loop infinito -->
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     # Sección 3: Rasca y Gana
     # Sección 3: Rasca y Gana
     st.markdown("""
