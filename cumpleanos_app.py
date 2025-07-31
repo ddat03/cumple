@@ -7,6 +7,24 @@ import random
 import streamlit.components.v1 as components
 import mimetypes
 import os
+
+
+def get_base64_image(image_path):
+    """Convierte imagen local a base64 para usar en HTML"""
+    if os.path.exists(image_path):
+        with open(image_path, "rb") as img_file:
+            # Detectar tipo MIME automáticamente
+            mime_type, _ = mimetypes.guess_type(image_path)
+            if mime_type is None:
+                mime_type = "image/jpeg"  # Default
+            
+            encoded = base64.b64encode(img_file.read()).decode()
+            return f"data:{mime_type};base64,{encoded}"
+    else:
+        st.error(f"No se encontró la imagen: {image_path}")
+        return ""
+
+
 st.write("🔍 **DEBUG INFO:**")
 st.write("Directorio actual:", os.getcwd())
 st.write("Archivos en el directorio:", os.listdir("."))
@@ -32,20 +50,6 @@ else:
 
 
 
-def get_base64_image(image_path):
-    """Convierte imagen local a base64 para usar en HTML"""
-    if os.path.exists(image_path):
-        with open(image_path, "rb") as img_file:
-            # Detectar tipo MIME automáticamente
-            mime_type, _ = mimetypes.guess_type(image_path)
-            if mime_type is None:
-                mime_type = "image/jpeg"  # Default
-            
-            encoded = base64.b64encode(img_file.read()).decode()
-            return f"data:{mime_type};base64,{encoded}"
-    else:
-        st.error(f"No se encontró la imagen: {image_path}")
-        return ""
 
 # Configuración de la página
 st.set_page_config(
