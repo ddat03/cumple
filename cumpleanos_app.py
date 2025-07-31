@@ -372,7 +372,7 @@ def elegant_login():
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        mi_foto_b64 = get_base64_image("images/3.jpeg")
+        mi_foto_b64 = get_base64_image("images/3.png")
         st.markdown(f"""
         <div class='login-container'>
             <div class='heart-3d'>
