@@ -232,7 +232,7 @@ st.markdown("""
 
     .photo-scroll {
         display: flex;
-        animation: scroll-photos 20s linear infinite;
+        animation: scroll-photos 30s linear infinite;
         gap: 2rem;
     }
 
