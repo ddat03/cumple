@@ -18,7 +18,7 @@ else:
     st.write("❌ Carpeta 'images' NO existe")
 
 # Prueba cargar una imagen específica
-test_path = "images/foto1.jpeg"  # Cambia por el nombre real de tu foto
+test_path = "images/1.jpeg"  # Cambia por el nombre real de tu foto
 if os.path.exists(test_path):
     st.write(f"✅ Archivo {test_path} existe")
     try:
