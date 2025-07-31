@@ -83,38 +83,25 @@ st.markdown("""
     
     .heart-3d {
         position: relative;
-        width: 120px;
-        height: 120px;
+        width: 200px;
+        height: 200px;
         margin: 2rem auto;
-        transform: rotate(-45deg);
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(255, 107, 138, 0.4);
         animation: heartbeat3d 2s ease-in-out infinite;
+        background: linear-gradient(45deg, #ff6b8a, #c44569);
+        padding: 5px;
     }
     
     .heart-3d::before,
     .heart-3d::after {
-        content: '';
-        width: 60px;
-        height: 96px;
-        position: absolute;
-        left: 60px;
-        top: -48px;
-        background: linear-gradient(135deg, #ff6b8a, #ff8fa3, #c44569);
-        border-radius: 60px 60px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-        box-shadow: 0 8px 25px rgba(255, 107, 138, 0.4);
+        display: none;
     }
     
-    .heart-3d::after {
-        left: -60px;
-        transform: rotate(45deg);
-        transform-origin: 100% 100%;
-    }
-    
-    .heart-3d {
-        background: linear-gradient(135deg, #ff6b8a, #ff8fa3, #c44569);
-        border-radius: 30px 30px 0 30px;
-        box-shadow: 0 8px 25px rgba(255, 107, 138, 0.4);
+    @keyframes heartbeat3d {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
     }
     
     @keyframes heartbeat3d {
@@ -387,7 +374,9 @@ def elegant_login():
     with col2:
         st.markdown("""
         <div class='login-container'>
-            <div class='heart-3d'></div>
+            <div class='heart-3d'>
+                <img src='{get_base64_image("images/3.jpeg")}' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%;'>
+            </div>
             <h1 class='title-elegant'>Feliz Cumpleaños</h1>
             <p class='subtitle-elegant'>Mi Amor Eterno ✨</p>
             <p style='color: #888; margin-bottom: 2rem; font-style: italic;'>
@@ -471,7 +460,7 @@ def main_birthday_page():
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
-    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/3.jpeg", "images/4.jpeg"]
+    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg"]
     
     # Crear carrusel dinámicamente
     html_fotos = "<div class='photo-grid'><div class='photo-scroll'>"
