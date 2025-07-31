@@ -6,6 +6,31 @@ import time
 import random
 import streamlit.components.v1 as components
 import mimetypes
+import os
+st.write("🔍 **DEBUG INFO:**")
+st.write("Directorio actual:", os.getcwd())
+st.write("Archivos en el directorio:", os.listdir("."))
+
+if os.path.exists("images"):
+    st.write("✅ Carpeta 'images' existe")
+    st.write("Archivos en images/:", os.listdir("images"))
+else:
+    st.write("❌ Carpeta 'images' NO existe")
+
+# Prueba cargar una imagen específica
+test_path = "images/foto1.jpeg"  # Cambia por el nombre real de tu foto
+if os.path.exists(test_path):
+    st.write(f"✅ Archivo {test_path} existe")
+    try:
+        encoded = get_base64_image(test_path)
+        st.write(f"✅ Imagen codificada exitosamente (primeros 50 caracteres): {encoded[:50]}...")
+    except Exception as e:
+        st.write(f"❌ Error al codificar: {e}")
+else:
+    st.write(f"❌ Archivo {test_path} NO existe")
+
+
+
 
 def get_base64_image(image_path):
     """Convierte imagen local a base64 para usar en HTML"""
