@@ -457,28 +457,22 @@ def main_birthday_page():
        <div class='photo-grid'>
            <div class='photo-scroll'>
                <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("fotos/1.jpeg")}' alt='1'style='height: 400px; border-radius: 15px; padding: 0;'>
+                   <img src='data:image/jpeg;base64,{get_base64_image("images/1.jpeg")}' alt='1'style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Celebrando juntos' style='height: 400px; border-radius: 15px; padding: 0;'>
+                   <img src='data:image/jpeg;base64,{get_base64_image("images/2.jpeg")}' alt='2'style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Aventuras' style='height: 400px; border-radius: 15px; padding: 0;'>
+                   <img src='data:image/jpeg;base64,{get_base64_image("images/3.jpeg")}' alt='3'style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Momentos íntimos' style='height: 400px; border-radius: 15px; padding: 0;'>
+                   <img src='data:image/jpeg;base64,{get_base64_image("images/4.jpeg")}' alt='4'style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Cumpleaños anteriores' style='height: 400px; border-radius: 15px; padding: 0;'>       
+                   <img src='data:image/jpeg;base64,{get_base64_image("images/5.jpeg")}' alt='5'style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Planes futuros' style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-               <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Momento especial' style='height: 400px; border-radius: 15px; padding: 0;'>
-               </div>
-               <div class='photo-card'>
-                   <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Celebrando juntos' style='height: 400px; border-radius: 15px; padding: 0;'>
+                   <img src='data:image/jpeg;base64,{get_base64_image("images/6.jpeg")}' alt='6'style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
            </div>
        </div>
