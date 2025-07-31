@@ -373,7 +373,7 @@ def elegant_login():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         mi_foto_b64 = get_base64_image("images/3.jpeg")
-        st.markdown("""
+        st.markdown(f"""
         <div class='login-container'>
             <div class='heart-3d'>
                 <img src='{mi_foto_b64}' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%;'>
