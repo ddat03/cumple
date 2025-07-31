@@ -24,11 +24,6 @@ def get_base64_image(image_path):
         st.error(f"No se encontró la imagen: {image_path}")
         return ""
 
-
-st.write("🔍 **DEBUG INFO:**")
-st.write("Directorio actual:", os.getcwd())
-st.write("Archivos en el directorio:", os.listdir("."))
-
 # Configuración de la página
 st.set_page_config(
     page_title="💖 Feliz Cumpleaños Mi Amor 💖",
