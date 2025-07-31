@@ -372,10 +372,11 @@ def elegant_login():
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
+        mi_foto_b64 = get_base64_image("images/3.jpeg")
         st.markdown("""
         <div class='login-container'>
             <div class='heart-3d'>
-                <img src='{get_base64_image("images/3.jpeg")}' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%;'>
+                <img src='{mi_foto_b64}' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%;'>
             </div>
             <h1 class='title-elegant'>Feliz Cumpleaños</h1>
             <p class='subtitle-elegant'>Mi Amor Eterno ✨</p>
