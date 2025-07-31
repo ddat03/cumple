@@ -457,7 +457,7 @@ def main_birthday_page():
        <div class='photo-grid'>
            <div class='photo-scroll'>
                <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("1.jpeg")}' alt='1'style='height: 400px; border-radius: 15px; padding: 0;'>
+                   <img src='data:image/jpeg;base64,{get_base64_image("fotos/1.jpeg")}' alt='1'style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
                    <img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' alt='Celebrando juntos' style='height: 400px; border-radius: 15px; padding: 0;'>
