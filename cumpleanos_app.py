@@ -464,37 +464,33 @@ def main_birthday_page():
     """, unsafe_allow_html=True)
     
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
-    fotos_locales = [
-    "images/1.jpeg",
-    "images/2.jpeg",  # Agrega las que tengas
-    "images/3.jpeg",
-    "images/4.jpeg",
-    "images/5.jpeg",
-    "images/6.jpeg"
-]
-
-# Generar HTML para todas las fotos
-    foto_html = ""
-    for i, foto in enumerate(fotos_locales):
-        if os.path.exists(foto):  # Solo agregar si existe
-            foto_html += f"""
-            <div class='photo-card'>
-                <img src='{get_base64_image(foto)}' 
-                     alt='Momento especial {i+1}' style='height: 400px; border-radius: 15px; padding: 0;'>
-            </div>
-            """
-    
-    st.markdown(f"""
+    st.markdown("""
     <div class='content-section'>
         <h2 class='section-title'>📸 Nuestros Momentos Mágicos 📸</h2>
-        <div class='photo-grid'>
-            <div class='photo-scroll'>
-                {foto_html}
-                {foto_html}  <!-- Duplicado para loop infinito -->
-            </div>
-        </div>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Lista de fotos (cambia por tus nombres reales)
+    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/3.jpeg", "images/4.jpeg"]
+    
+    # Crear carrusel dinámicamente
+    html_fotos = "<div class='photo-grid'><div class='photo-scroll'>"
+    
+    for foto in mis_fotos:
+        if os.path.exists(foto):
+            imagen_b64 = get_base64_image(foto)
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0;'></div>"
+    
+    # Duplicar para loop infinito
+    for foto in mis_fotos:
+        if os.path.exists(foto):
+            imagen_b64 = get_base64_image(foto)
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0;'></div>"
+    
+    html_fotos += "</div></div>"
+    
+    # Mostrar el HTML
+    st.markdown(html_fotos, unsafe_allow_html=True)
     # Sección 3: Rasca y Gana
     # Sección 3: Rasca y Gana
     st.markdown("""
