@@ -5,11 +5,22 @@ import io
 import time
 import random
 import streamlit.components.v1 as components
+import mimetypes
 
 def get_base64_image(image_path):
     """Convierte imagen local a base64 para usar en HTML"""
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
+    if os.path.exists(image_path):
+        with open(image_path, "rb") as img_file:
+            # Detectar tipo MIME automáticamente
+            mime_type, _ = mimetypes.guess_type(image_path)
+            if mime_type is None:
+                mime_type = "image/jpeg"  # Default
+            
+            encoded = base64.b64encode(img_file.read()).decode()
+            return f"data:{mime_type};base64,{encoded}"
+    else:
+        st.error(f"No se encontró la imagen: {image_path}")
+        return ""
 
 # Configuración de la página
 st.set_page_config(
@@ -457,7 +468,8 @@ def main_birthday_page():
        <div class='photo-grid'>
            <div class='photo-scroll'>
                <div class='photo-card'>
-                   <img src='data:image/jpeg;base64,{get_base64_image("images/1.jpeg")}' alt='1'style='height: 400px; border-radius: 15px; padding: 0;'>
+                    <img src='{get_base64_image("images/1.jpeg")}' 
+                         alt='1' style='height: 400px; border-radius: 15px; padding: 0;'>
                </div>
                <div class='photo-card'>
                    <img src='data:image/jpeg;base64,{get_base64_image("images/2.jpeg")}' alt='2'style='height: 400px; border-radius: 15px; padding: 0;'>
