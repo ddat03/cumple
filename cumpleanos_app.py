@@ -82,7 +82,13 @@ st.markdown("""
         background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
         animation: shimmer 3s infinite;
     }
-    
+    .photo-caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    }
     @keyframes shimmer {
         0%% { transform: translateX(-100%%) translateY(-100%%) rotate(45deg); }
         100%% { transform: translateX(100%%) translateY(100%%) rotate(45deg); }
@@ -703,6 +709,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
