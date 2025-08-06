@@ -350,6 +350,26 @@ st.markdown("""
         background: rgba(255, 255, 255, 0.2);
         transform: scale(1.02);
     }
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(45deg, #ff6b8a, #c44569) !important;
+        border: none !important;
+        color: white !important;
+        border-radius: 25px !important;
+        padding: 0.5rem 2rem !important;
+        font-weight: 600 !important;
+        box-shadow: 0 4px 15px rgba(255, 107, 138, 0.3) !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .stButton > button[kind="primary"]:hover {
+        background: linear-gradient(45deg, #ff4569, #a03454) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(255, 107, 138, 0.4) !important;
+    }
+    
+    .stButton > button[kind="primary"]:active {
+        transform: translateY(0px) !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -603,6 +623,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
