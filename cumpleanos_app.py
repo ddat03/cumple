@@ -524,8 +524,7 @@ def main_birthday_page():
 
     st.markdown(f"""
         <h2 style='text-align: center; color: #ffffff;
-            text-shadow: 1px 1px 0px #333, 2px 2px 0px #555, 3px 3px 0px #777, 4px 4px 6px rgba(0,0,0,0.7);
-            font-family: Georgia, serif; margin-bottom: 20px; '>
+            -webkit-text-stroke: 2px #00ffff; text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff; font-family: Georgia, serif; margin-bottom: 20px; '>
             Con todo mi corazon 💖
         </h2>
         <div style="text-align: center; margin: 20px 0;">
@@ -540,8 +539,7 @@ def main_birthday_page():
     
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
     st.markdown(f"""
-        <h2 style='text-align: center; color: #ffffff;
-            -webkit-text-stroke: 2px #ffd700; text-shadow: 2px 2px 4px rgba(0,0,0,0.8) font-family: Georgia, serif; margin-bottom: 20px;'> Porque siempre seras la mas hermosa</h2>
+        <h2 style='text-align: center; color: #ffffff; -webkit-text-stroke: 2px #ffd700; text-shadow: 2px 2px 4px rgba(0,0,0,0.8)  font-family: Georgia, serif; margin-bottom: 20px;'> Porque siempre seras la mas hermosa</h2>
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
@@ -655,6 +653,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
