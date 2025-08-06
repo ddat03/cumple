@@ -396,7 +396,7 @@ def elegant_login():
         """, unsafe_allow_html=True)
         
         # Botón para abrir modal (encima de la imagen)
-        if st.button("🔐 Ingresar Código", type="primary", use_container_width=True):
+        if st.button("🔐 Ingresar la Fecha de tu cumple mi Pua", type="primary", use_container_width=True):
             st.session_state.show_modal = True
             st.rerun()
         
@@ -415,10 +415,10 @@ def elegant_login():
                 border: 3px solid #ff6b8a;
                 z-index: 9999;
                 text-align: center;
-                max-width: 400px;
+                max-width: 200px;
             '>
-                <h2 style='color: #c44569; margin-bottom: 1rem;'>🔐 Código del Corazón</h2>
-                <p style='color: #666; margin-bottom: 2rem;'>Ingresa nuestro número especial</p>
+                <h2 style='color: #c44569; margin-bottom: 1rem;'>🔐 Te quiero mucho mi amor</h2>
+                
             </div>
             """, unsafe_allow_html=True)
             
@@ -619,6 +619,7 @@ if __name__ == "__main__":
             if st.button("Cerrar Sesión"):
                 st.session_state.authenticated = False
                 st.rerun()
+
 
 
 
