@@ -586,25 +586,25 @@ def main_birthday_page():
     # Crear carrusel dinámicamente
     html_fotos = "<div class='photo-grid'><div class='photo-scroll'>"
     
-    # for foto in mis_fotos:
-    #     if os.path.exists(foto):
-    #         imagen_b64 = get_base64_image(foto)
-    #         html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
-    
-    # # Duplicar para loop infinito
-    # for foto in mis_fotos:
-    #     if os.path.exists(foto):
-    #         imagen_b64 = get_base64_image(foto)
-    #         html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
-    for foto, frase in zip(mis_fotos * 2, mis_frases * 2):  # duplicado pero eficiente
+    for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"""
-            <div class='photo-card'>
-                <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
-                <p class='photo-caption'>{frase}</p>
-            </div>
-            """
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
+    
+    # Duplicar para loop infinito
+    for foto in mis_fotos:
+        if os.path.exists(foto):
+            imagen_b64 = get_base64_image(foto)
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
+    # for foto, frase in zip(mis_fotos * 2, mis_frases * 2):  # duplicado pero eficiente
+    #     if os.path.exists(foto):
+    #         imagen_b64 = get_base64_image(foto)
+    #         html_fotos += f"""
+    #         <div class='photo-card'>
+    #             <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
+    #             <p class='photo-caption'>{frase}</p>
+    #         </div>
+    #         """
 
     html_fotos += "</div></div>"
     
@@ -699,6 +699,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
