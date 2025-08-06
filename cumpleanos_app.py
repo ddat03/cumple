@@ -498,6 +498,8 @@ def main_birthday_page():
         border-radius: 15px;
         display: block;
         margin: 2rem auto;
+        border: 4px solid #00ffff;
+        box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
     '>
     """, unsafe_allow_html=True)
     
@@ -525,7 +527,7 @@ def main_birthday_page():
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
-    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", ]
+    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
     # Lista de frases correspondientes (una frase para cada foto)
     
     # Crear carrusel dinámicamente
@@ -635,6 +637,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
