@@ -489,8 +489,9 @@ def main_birthday_page():
             color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         '>🎂 Tu Día Especial Ha Llegado 🎂</h1>
-        <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
-            Son 22 hermosos años✨
+        <p style='text-align: center; font-size: 1.3rem; color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin-bottom: 3rem;'>
+            Felices 22 hermosos años mi vida✨
         </p>
          <img src='{imagen_11}' style='
         width: 60%; 
@@ -507,7 +508,8 @@ def main_birthday_page():
         gif_base64 = base64.b64encode(f.read()).decode()
 
     st.markdown(f"""
-        <h2 style='text-align: center; color: #c44569; font-family: Georgia, serif; margin-bottom: 20px;'>
+        <h2 style='text-align: center; color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-family: Georgia, serif; margin-bottom: 20px;'>
             Con todo mi corazon 💖
         </h2>
         <div style="text-align: center; margin: 20px 0;">
@@ -632,6 +634,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
