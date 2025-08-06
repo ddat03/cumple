@@ -417,7 +417,7 @@ def elegant_login():
                 text-align: center;
                 max-width: 200px;
             '>
-                <h2 style='color: #c44569; margin-bottom: 1rem;'>🔐 Te quiero mucho mi amor</h2>
+                <h2 style='color: #c44569; margin-bottom: 1rem; font-size: 24px;''>🔐 Te quiero mucho mi amor</h2>
                 
             </div>
             """, unsafe_allow_html=True)
@@ -619,6 +619,7 @@ if __name__ == "__main__":
             if st.button("Cerrar Sesión"):
                 st.session_state.authenticated = False
                 st.rerun()
+
 
 
 
