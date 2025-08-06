@@ -225,6 +225,7 @@ st.markdown("""
         margin: 2rem 0;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        width: 100%
     }
 
     .photo-scroll {
@@ -612,6 +613,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
