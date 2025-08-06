@@ -396,18 +396,66 @@ def elegant_login():
         </div>
         """, unsafe_allow_html=True)
         
-        code = st.text_input("", placeholder="Ingresa nuestro número especial...", type="password", key="love_code")
+        # Agregar estado para el modal
+        if 'show_modal' not in st.session_state:
+            st.session_state.show_modal = False
         
-        # Botón personalizado
+        # Botón para abrir modal
         if st.button("💝 Abrir mi Corazón 💝", type="primary"):
-            if code == "12345":
-                st.session_state.authenticated = True
-                st.balloons()
-                st.success("¡Código correcto! 💖 ¡Bienvenida a tu día especial!")
-                time.sleep(2)
-                st.rerun()
-            else:
-                st.error("💔 Intenta de nuevo, mi amor...")
+            st.session_state.show_modal = True
+        
+        # Modal flotante
+        if st.session_state.show_modal:
+            st.markdown("""
+            <div style='
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            '>
+                <div style='
+                    background: white;
+                    padding: 3rem;
+                    border-radius: 20px;
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                    text-align: center;
+                    max-width: 400px;
+                    position: relative;
+                '>
+                    <h3 style='color: #c44569; margin-bottom: 2rem;'>🔐 Código del Corazón 🔐</h3>
+                    <p style='color: #666; margin-bottom: 2rem;'>Ingresa nuestro número especial</p>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            # Input en el modal
+            col1, col2, col3 = st.columns([1, 2, 1])
+            with col2:
+                code = st.text_input("", placeholder="Código secreto...", type="password", key="modal_code")
+                
+                col_btn1, col_btn2 = st.columns(2)
+                with col_btn1:
+                    if st.button("✨ Entrar ✨", type="primary"):
+                        if code == "12345":
+                            st.session_state.authenticated = True
+                            st.session_state.show_modal = False
+                            st.balloons()
+                            st.success("¡Código correcto! 💖")
+                            time.sleep(2)
+                            st.rerun()
+                        else:
+                            st.error("💔 Código incorrecto")
+                
+                with col_btn2:
+                    if st.button("❌ Cerrar"):
+                        st.session_state.show_modal = False
+                        st.rerun()
     
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -586,3 +634,4 @@ if __name__ == "__main__":
             if st.button("Cerrar Sesión"):
                 st.session_state.authenticated = False
                 st.rerun()
+
