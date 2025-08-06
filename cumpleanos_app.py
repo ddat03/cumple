@@ -524,7 +524,7 @@ def main_birthday_page():
         st.markdown("""
         <div style='text-align: center; margin: 2rem 0;'>
             <div class='scratch-area' style='
-                background: linear-gradient(45deg, #silver, #c0c0c0);
+                background: linear-gradient(45deg, #ffb3d1, #ff6b9d);
                 border-radius: 15px;
                 padding: 4rem 2rem;
                 cursor: pointer;
@@ -603,6 +603,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
