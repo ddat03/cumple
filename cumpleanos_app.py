@@ -522,7 +522,8 @@ def main_birthday_page():
     
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
     st.markdown("""
-        <h2 class='section-title'> Porque siempre seras la mas hermosa</h2>
+        <h2 class='section-title color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);'> Porque siempre seras la mas hermosa</h2>
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
@@ -548,7 +549,8 @@ def main_birthday_page():
     st.markdown(html_fotos, unsafe_allow_html=True)
     # Sección 3: Rasca y Gana
     st.markdown("""
-        <h2 class='section-title'>🎁 Esta cancion siempre me recuerda a nosotros 🎁</h2>
+        <h2 class='section-title color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);'>🎁 Esta cancion siempre me recuerda a nosotros 🎁</h2>
     """, unsafe_allow_html=True)
     
     if not st.session_state.scratch_revealed:
@@ -634,6 +636,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
