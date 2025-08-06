@@ -597,14 +597,14 @@ def main_birthday_page():
     #         imagen_b64 = get_base64_image(foto)
     #         html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
     for foto, frase in zip(mis_fotos, mis_frases):
-    if os.path.exists(foto):
-        imagen_b64 = get_base64_image(foto)
-        html_fotos += f"""
-        <div class='photo-card'>
-            <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
-            <p class='photo-caption'>{frase}</p>
-        </div>
-        """
+        if os.path.exists(foto):
+            imagen_b64 = get_base64_image(foto)
+            html_fotos += f"""
+            <div class='photo-card'>
+                <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
+                <p class='photo-caption'>{frase}</p>
+            </div>
+            """
 
 # Repetir para el loop infinito
     for foto, frase in zip(mis_fotos, mis_frases):
@@ -709,6 +709,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
