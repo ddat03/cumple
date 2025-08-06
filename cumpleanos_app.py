@@ -555,14 +555,8 @@ def main_birthday_page():
             text-align: center; color: #ffffff;  
             font-family: Georgia, serif; 
             margin-bottom: 20px;
-            -webkit-text-stroke: 3px #bf00ff;
-            text-shadow: 
-                0 0 5px #bf00ff,
-                0 0 10px #bf00ff,
-                0 0 15px #bf00ff,
-                0 0 20px #bf00ff,
-                0 0 35px #bf00ff,
-                0 0 40px #bf00ff;'> Porque siempre seras la mas hermosa</h2>
+            -webkit-text-stroke: 2px #39ff14;
+            text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14, 0 0 20px #39ff14;'> Porque siempre seras la mas hermosa</h2>
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
@@ -676,6 +670,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
