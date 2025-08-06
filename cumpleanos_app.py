@@ -456,7 +456,7 @@ def main_birthday_page():
 
     imagen_11 = get_base64_image("images/10.jpeg")
     # Título principal
-    st.markdown("""
+    st.markdown(f"""
         <h1 class='section-title'>🎂 Tu Día Especial Ha Llegado 🎂</h1>
         <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
             Son 22 hermosos años✨
@@ -605,6 +605,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
