@@ -466,26 +466,13 @@ def main_birthday_page():
     # Sección 1: Mensaje de Amor
     st.markdown("""
     <div class='content-section'>
-        <h2 class='section-title'>💖 Carta de Amor 💖</h2>
-        <div class='love-message-box'>
-            <h3 style='margin-bottom: 2rem; font-size: 2rem;'>Para la Mujer Más Especial</h3>
-            <p style='font-size: 1.4rem; line-height: 1.8; margin: 2rem 0;'>
-                En este día tan especial, quiero que sepas que eres la razón por la cual 
-                cada amanecer es una promesa de felicidad. Tu sonrisa ilumina mis días más oscuros,
-                tu risa es la melodía más hermosa que he escuchado, y tu amor es el regalo 
-                más preciado que la vida me ha dado.
-            </p>
-            <p style='font-size: 1.3rem; line-height: 1.6; font-style: italic;'>
-                Que este nuevo año de vida esté lleno de sueños cumplidos, aventuras increíbles,
-                momentos de pura felicidad y todo el amor que tu corazón puede contener.
-            </p>
-            <h3 style='margin-top: 2.5rem; font-size: 1.8rem;'>
-                ¡Te amo más allá de las palabras! 💕✨
-            </h3>
-        </div>
+        <h2 class='section-title'> Con todo mi corazon 💖</h2>
     </div>
     """, unsafe_allow_html=True)
     
+    col1, col2, col3 = st.columns([1,2,1])
+    with col2:
+    st.image("gif.gif", width=300)
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
     st.markdown("""
     <div class='content-section'>
@@ -613,6 +600,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
