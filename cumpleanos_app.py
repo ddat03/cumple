@@ -574,7 +574,7 @@ def main_birthday_page():
     "Detalles que inspiran",
     "Colores del alma",
     "Historias sin palabras"
-]
+    ]
     # Lista de frases correspondientes (una frase para cada foto)
     
     # Crear carrusel dinámicamente
@@ -703,6 +703,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
