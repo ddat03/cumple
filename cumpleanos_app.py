@@ -595,7 +595,7 @@ def main_birthday_page():
         
         st.markdown("""
         <div style='text-align: center; margin: 2rem 0;'>
-            <p style='color: #080808; font-style: italic; font-size: 1.2rem;'>
+            <p style='color: #ffffff; font-style: italic; font-size: 1.2rem;'>
                 "Esta canción siempre me recuerda a nosotros..." 💖
             </p>
         </div>
@@ -635,6 +635,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
