@@ -59,7 +59,7 @@ st.markdown("""
     }
     
     .login-container {
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(20px);
         border-radius: 30px;
         padding: 4rem 3rem;
@@ -411,7 +411,7 @@ def elegant_login():
             </div>
             <h1 class='title-elegant'>Feliz Cumpleaños</h1>
             <p class='subtitle-elegant'>Mi Amor Eterno ✨</p>
-            <p style='color: #888; margin-bottom: 2rem; font-style: italic;'>
+            <p style='color: #080808; margin-bottom: 2rem; font-style: italic;'>
                 "Cada día contigo es una celebración,<br>
                 pero hoy es especialmente mágico"
             </p>
@@ -635,6 +635,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
