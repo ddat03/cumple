@@ -372,10 +372,15 @@ def elegant_login():
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        mi_foto_b64 = get_base64_image("images/4.jpeg")
+        mi_foto_b64 = get_base64_image("images/3.jpeg")
+        
+        # Agregar estado para el modal
+        if 'show_modal' not in st.session_state:
+            st.session_state.show_modal = False
+        
         st.markdown(f"""
         <div class='login-container'>
-            <div class='heart-3d'>
+            <div class='heart-3d' onclick='openModal()' style='cursor: pointer;'>
                 <img src='{mi_foto_b64}' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%;'>
             </div>
             <h1 class='title-elegant'>Feliz Cumpleaños</h1>
@@ -384,78 +389,86 @@ def elegant_login():
                 "Cada día contigo es una celebración,<br>
                 pero hoy es especialmente mágico"
             </p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        # Input personalizado con HTML
-        st.markdown("""
-        <div style='margin-top: -80px; position: relative; z-index: 10;'>
-            <p style='text-align: center; color: #c44569; font-weight: 600; margin-bottom: 1rem;'>
-                🔐 Código del Corazón 🔐
+            <p style='color: #c44569; font-weight: 600; margin-top: 1rem;'>
+                💕 Haz clic en mi foto para continuar 💕
             </p>
         </div>
+        
+        <script>
+        function openModal() {{
+            // Trigger Streamlit button click
+            const buttons = window.parent.document.querySelectorAll('button[data-testid="baseButton-secondary"]');
+            if (buttons.length > 0) {{
+                buttons[0].click();
+            }}
+        }}
+        </script>
         """, unsafe_allow_html=True)
         
-        # Agregar estado para el modal
-        if 'show_modal' not in st.session_state:
-            st.session_state.show_modal = False
-        
-        # Botón para abrir modal
-        if st.button("💝 Abrir mi Corazón 💝", type="primary"):
+        # Botón invisible para activar el modal
+        if st.button("open_modal", key="hidden_modal", label_visibility="hidden"):
             st.session_state.show_modal = True
+            st.rerun()
         
         # Modal flotante
         if st.session_state.show_modal:
+            # Crear overlay
             st.markdown("""
-            <div style='
+            <style>
+            .modal-overlay {
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.7);
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.8);
                 z-index: 9999;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-            '>
-                <div style='
-                    background: white;
-                    padding: 3rem;
-                    border-radius: 20px;
-                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-                    text-align: center;
-                    max-width: 400px;
-                    position: relative;
-                '>
-                    <h3 style='color: #c44569; margin-bottom: 2rem;'>🔐 Código del Corazón 🔐</h3>
-                    <p style='color: #666; margin-bottom: 2rem;'>Ingresa nuestro número especial</p>
+            }
+            .modal-content {
+                background: white;
+                padding: 3rem;
+                border-radius: 25px;
+                box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+                text-align: center;
+                max-width: 450px;
+                border: 2px solid #ff6b8a;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+            
+            # Modal content
+            st.markdown("""
+            <div class='modal-overlay'>
+                <div class='modal-content'>
+                    <h2 style='color: #c44569; margin-bottom: 1rem;'>🔐 Código del Corazón 🔐</h2>
+                    <p style='color: #666; margin-bottom: 2rem;'>Ingresa nuestro número especial para acceder a tu sorpresa</p>
                 </div>
             </div>
             """, unsafe_allow_html=True)
             
-            # Input en el modal
-            col1, col2, col3 = st.columns([1, 2, 1])
-            with col2:
-                code = st.text_input("", placeholder="Código secreto...", type="password", key="modal_code")
-                
-                col_btn1, col_btn2 = st.columns(2)
-                with col_btn1:
-                    if st.button("✨ Entrar ✨", type="primary"):
-                        if code == "12345":
-                            st.session_state.authenticated = True
-                            st.session_state.show_modal = False
-                            st.balloons()
-                            st.success("¡Código correcto! 💖")
-                            time.sleep(2)
-                            st.rerun()
-                        else:
-                            st.error("💔 Código incorrecto")
-                
-                with col_btn2:
-                    if st.button("❌ Cerrar"):
+            # Input y botones del modal
+            code = st.text_input("", placeholder="Código secreto...", type="password", key="modal_code")
+            
+            col_btn1, col_btn2 = st.columns(2)
+            with col_btn1:
+                if st.button("✨ Entrar ✨", type="primary", use_container_width=True):
+                    if code == "12345":
+                        st.session_state.authenticated = True
                         st.session_state.show_modal = False
+                        st.balloons()
+                        st.success("¡Código correcto! 💖")
+                        time.sleep(1)
                         st.rerun()
+                    else:
+                        st.error("💔 Código incorrecto")
+            
+            with col_btn2:
+                if st.button("❌ Cerrar", use_container_width=True):
+                    st.session_state.show_modal = False
+                    st.rerun()
     
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -634,4 +647,5 @@ if __name__ == "__main__":
             if st.button("Cerrar Sesión"):
                 st.session_state.authenticated = False
                 st.rerun()
+
 
