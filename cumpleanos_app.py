@@ -561,7 +561,9 @@ def main_birthday_page():
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
-    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
+    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg" ]
+        #mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
+
     # Lista de frases correspondientes (una frase para cada foto)
     
     # Crear carrusel dinámicamente
@@ -671,6 +673,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
