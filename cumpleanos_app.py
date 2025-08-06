@@ -461,7 +461,14 @@ def main_birthday_page():
         <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
             Son 22 hermosos años✨
         </p>
-         <img src='{imagen_11}' style='width: 60%; height: 60%; object-fit: cover'>
+         <img src='{imagen_11}' style='
+        width: 60%; 
+        height: 400px; 
+        object-fit: cover; 
+        border-radius: 15px;
+        display: block;
+        margin: 2rem auto;
+    '>
     """, unsafe_allow_html=True)
     
     # Sección 1: Mensaje de Amor
@@ -605,6 +612,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
