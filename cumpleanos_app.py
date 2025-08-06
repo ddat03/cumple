@@ -549,8 +549,8 @@ def main_birthday_page():
     st.markdown(html_fotos, unsafe_allow_html=True)
     # Sección 3: Rasca y Gana
     st.markdown("""
-        <h2 class='section-title' style='color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);'>🎁 Esta cancion siempre me recuerda a nosotros 🎁</h2>
+        <h2 style='text-align: center; color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-family: Georgia, serif; margin-bottom: 20px;'>🎁 Esta cancion siempre me recuerda a nosotros 🎁</h2>
     """, unsafe_allow_html=True)
     
     if not st.session_state.scratch_revealed:
@@ -636,6 +636,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
