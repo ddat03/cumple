@@ -400,6 +400,63 @@ def elegant_login():
             </p>
         </div>
         """, unsafe_allow_html=True)
+        
+        # Modal flotante
+        if st.session_state.show_modal:
+            # Crear overlay
+            st.markdown("""
+            <style>
+            .modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .modal-content {
+                background: white;
+                padding: 3rem;
+                border-radius: 25px;
+                box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+                text-align: center;
+                max-width: 450px;
+                border: 2px solid #ff6b8a;
+            }
+            </style>
+            
+            <div class='modal-overlay'>
+                <div class='modal-content'>
+                    <h2 style='color: #c44569; margin-bottom: 1rem;'>🔐 Código del Corazón 🔐</h2>
+                    <p style='color: #666; margin-bottom: 2rem;'>Ingresa nuestro número especial para acceder a tu sorpresa</p>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            # Input y botones del modal
+            code = st.text_input("", placeholder="Código secreto...", type="password", key="modal_code")
+            
+            col_btn1, col_btn2 = st.columns(2)
+            with col_btn1:
+                if st.button("✨ Entrar ✨", type="primary", use_container_width=True):
+                    if code == "12345":
+                        st.session_state.authenticated = True
+                        st.session_state.show_modal = False
+                        st.balloons()
+                        st.success("¡Código correcto! 💖")
+                        time.sleep(1)
+                        st.rerun()
+                    else:
+                        st.error("💔 Código incorrecto")
+            
+            with col_btn2:
+                if st.button("❌ Cerrar", use_container_width=True):
+                    st.session_state.show_modal = False
+                    st.rerun()
 
 # Página principal con todas las secciones
 def main_birthday_page():
@@ -576,6 +633,7 @@ if __name__ == "__main__":
             if st.button("Cerrar Sesión"):
                 st.session_state.authenticated = False
                 st.rerun()
+
 
 
 
