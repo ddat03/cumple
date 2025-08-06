@@ -41,7 +41,7 @@ fondo_imagen = get_base64_image("images/11.jpeg")
 st.markdown(f"""
 <style>
     .stApp {{
-        background: url('{fondo_imagen}') 70% 80%/120% no-repeat fixed;
+        background: url('{fondo_imagen}') 80% 80%/100% no-repeat fixed;
     }}
 </style>
 """, unsafe_allow_html=True)
@@ -635,6 +635,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
