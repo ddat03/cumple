@@ -35,17 +35,21 @@ st.set_page_config(
 # CSS personalizado con imagen de fondo y estilos elegantes
 fondo_imagen = get_base64_image("images/11.jpeg")
 
+# CSS solo para el fondo
 st.markdown(f"""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
-    
     .stApp {{
         background: url('data:image/jpeg;base64,{fondo_imagen}') center/cover no-repeat fixed;
         background-blend-mode: overlay;
         background-color: rgba(255, 182, 193, 0.3);
     }}
+</style>
+""", unsafe_allow_html=True)
     
-    
+st.markdown(f"""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+     
     .main-overlay {
         background: rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
@@ -609,6 +613,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
