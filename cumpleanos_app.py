@@ -464,15 +464,19 @@ def main_birthday_page():
     """, unsafe_allow_html=True)
     
     # Sección 1: Mensaje de Amor
-    st.markdown("""
+    with open("gif.gif", "rb") as f:
+    gif_base64 = base64.b64encode(f.read()).decode()
+
+    st.markdown(f"""
     <div class='content-section'>
         <h2 class='section-title'> Con todo mi corazon 💖</h2>
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="data:image/gif;base64,{gif_base64}" 
+                 width="300" 
+                 style="border-radius: 15px; box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);">
+        </div>
     </div>
     """, unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns([1,2,1])
-    with col2:
-        st.image("gif.gif", width=300)
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
     st.markdown("""
     <div class='content-section'>
@@ -600,6 +604,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
