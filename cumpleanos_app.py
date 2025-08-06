@@ -554,7 +554,6 @@ def main_birthday_page():
                 padding: 2rem;
                 box-shadow: 0 15px 40px rgba(255, 107, 138, 0.2);
             '>
-                <h3 style='color: #c44569; margin-bottom: 2rem;'>🎵 ¡Nuestra Canción Especial! 🎵</h3>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -594,9 +593,7 @@ def main_birthday_page():
     
     # Botón final de celebración
     st.markdown("""
-    <div class='content-section' style='text-align: center;'>
-        <h2 style='color: #c44569; margin-bottom: 2rem;'>🎉 ¡Celebremos Juntos! 🎉</h2>
-    """, unsafe_allow_html=True)
+    
     
     if st.button("🎆 ¡FELIZ CUMPLEAÑOS! 🎆", type="primary"):
         st.balloons()
@@ -612,6 +609,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
