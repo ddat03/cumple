@@ -483,12 +483,12 @@ def main_birthday_page():
             font-family: Dancing Script, cursive;
             font-size: 2.8rem;
             font-weight: 600;
-            background: linear-gradient(45deg, #ff6b8a, #c44569);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
             margin-bottom: 2rem;
             color: #000000;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         '>🎂 Tu Día Especial Ha Llegado 🎂</h1>
         <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
             Son 22 hermosos años✨
@@ -633,6 +633,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
