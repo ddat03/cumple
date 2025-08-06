@@ -451,13 +451,13 @@ def elegant_login():
             """, unsafe_allow_html=True)
             
             # Input del código
-            code = st.text_input("", placeholder="12345", type="password", key="modal_code")
+            code = st.text_input("", placeholder="", type="password", key="modal_code")
             
             # Botones
             col_btn1, col_btn2 = st.columns(2)
             with col_btn1:
                 if st.button("✨ Entrar ✨", type="primary"):
-                    if code == "12345":
+                    if code == "0708":
                         st.session_state.authenticated = True
                         st.session_state.show_modal = False
                         st.balloons()
@@ -636,6 +636,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
