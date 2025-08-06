@@ -59,7 +59,7 @@ st.markdown("""
     }
     
     .login-container {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(20px);
         border-radius: 30px;
         padding: 4rem 3rem;
@@ -635,6 +635,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
