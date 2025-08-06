@@ -35,7 +35,7 @@ st.set_page_config(
 
 # CSS personalizado con imagen de fondo y estilos elegantes
 # Agregar debug temporal
-fondo_test = get_base64_image("images/11.jpeg")
+fondo_imagen = get_base64_image("images/11.jpeg")
 
 # CSS solo para el fondo
 st.markdown(f"""
@@ -614,6 +614,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
