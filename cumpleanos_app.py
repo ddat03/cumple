@@ -373,11 +373,7 @@ if 'scratch_revealed' not in st.session_state:
 
 # Función de autenticación elegante
 def elegant_login():
-    # Overlay principal
-    #st.components.v1.html(generate_floating_elements(), height=0)
-    
-    # Elementos flotantes
-    #st.markdown(generate_floating_elements(), unsafe_allow_html=True)
+
     
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -456,11 +452,7 @@ def elegant_login():
 
 # Página principal con todas las secciones
 def main_birthday_page():
-    # Overlay principal
-    
-    
-    # Elementos flotantes
-    #st.components.v1.html(generate_floating_elements(), height=0)
+
 
     imagen_11 = get_base64_image("images/11.jpeg")
     # Título principal
@@ -469,7 +461,7 @@ def main_birthday_page():
         <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
             Son 22 hermosos años✨
         </p>
-         <img src='{mi_foto_b64}' style='width: 100%; height: 100%; object-fit: cover>
+         <img src='{imagen_11}' style='width: 100%; height: 100%; object-fit: cover>
     """, unsafe_allow_html=True)
     
     # Sección 1: Mensaje de Amor
@@ -613,6 +605,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
