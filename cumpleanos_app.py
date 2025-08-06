@@ -252,6 +252,7 @@ st.markdown("""
         overflow: hidden;
         min-width: 400px;
         height: 500px;
+        flex: 1;
     }
     
     .photo-card:hover {
@@ -613,6 +614,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
