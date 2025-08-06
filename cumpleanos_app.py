@@ -492,13 +492,14 @@ def main_birthday_page():
     st.markdown(f"""
         <h1 style='
             font-family: Dancing Script, cursive;
-            font-size: 2.8rem;
+            font-size: 4rem;
             font-weight: 600;
-            -webkit-background-clip: text;
             text-align: center;
             margin-bottom: 2rem;
             color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            -webkit-text-stroke: 3px #ff6b8a;
+            filter: drop-shadow(0 0 10px rgba(255, 107, 138, 0.5);
         '>🎂 Tu Día Especial Ha Llegado 🎂</h1>
         <p style='text-align: center; font-size: 1.3rem; color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin-bottom: 3rem;'>
@@ -557,7 +558,7 @@ def main_birthday_page():
     for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0;'></div>"
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'></div>"
     
     html_fotos += "</div></div>"
     
@@ -652,6 +653,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
