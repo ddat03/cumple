@@ -515,7 +515,9 @@ def main_birthday_page():
         <div style="text-align: center; margin: 20px 0;">
             <img src="data:image/gif;base64,{gif_base64}" 
                  width="300" 
-                 style="border-radius: 12px; box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);">
+                 style="border-radius: 12px; 
+                 border: 4px solid #bf00ff;
+                 box-shadow: 0 0 20px #bf00ff, 0 0 40px #bf00ff;">
         </div>
         """, unsafe_allow_html=True)
 
@@ -637,6 +639,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
