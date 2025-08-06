@@ -81,8 +81,8 @@ st.markdown(f"""
     }
     
     @keyframes shimmer {
-        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-        100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        0%% { transform: translateX(-100%%) translateY(-100%%) rotate(45deg); }
+        100%% { transform: translateX(100%%) translateY(100%%) rotate(45deg); }
     }
     
     .heart-3d {
@@ -610,6 +610,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
