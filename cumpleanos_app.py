@@ -549,7 +549,7 @@ def main_birthday_page():
     st.markdown(html_fotos, unsafe_allow_html=True)
     # Sección 3: Rasca y Gana
     st.markdown("""
-        <h2 class='section-title color: #ffffff;
+        <h2 class='section-title style: #ffffff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);'>🎁 Esta cancion siempre me recuerda a nosotros 🎁</h2>
     """, unsafe_allow_html=True)
     
@@ -636,6 +636,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
