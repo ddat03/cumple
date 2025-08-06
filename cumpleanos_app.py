@@ -591,8 +591,7 @@ def main_birthday_page():
                 st.session_state.scratch_revealed = False
                 st.rerun()
     
-    # Botón final de celebración
-    st.markdown("""
+    # Botón final de celebració
     
     
     if st.button("🎆 ¡FELIZ CUMPLEAÑOS! 🎆", type="primary"):
