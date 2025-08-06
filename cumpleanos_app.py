@@ -382,7 +382,7 @@ def elegant_login():
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        mi_foto_b64 = get_base64_image("images/3.jpeg")
+        mi_foto_b64 = get_base64_image("images/4.jpeg")
         
         # Agregar estado para el modal
         if 'show_modal' not in st.session_state:
@@ -462,13 +462,14 @@ def main_birthday_page():
     # Elementos flotantes
     #st.components.v1.html(generate_floating_elements(), height=0)
 
-    
+    imagen_11 = get_base64_image("images/11.jpeg")
     # Título principal
     st.markdown("""
         <h1 class='section-title'>🎂 Tu Día Especial Ha Llegado 🎂</h1>
         <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
-            Un día lleno de amor, sorpresas y momentos mágicos solo para ti ✨
+            Son 22 hermosos años✨
         </p>
+         <img src='{mi_foto_b64}' style='width: 100%; height: 100%; object-fit: cover>
     """, unsafe_allow_html=True)
     
     # Sección 1: Mensaje de Amor
@@ -489,13 +490,11 @@ def main_birthday_page():
     
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
     st.markdown("""
-    <div class='content-section'>
-        <h2 class='section-title'>📸 Nuestros Momentos Mágicos 📸</h2>
-    </div>
+        <h2 class='section-title'> Porque siempre seras la mas hermosa</h2>
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
-    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg"]
+    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", ]
     
     # Crear carrusel dinámicamente
     html_fotos = "<div class='photo-grid'><div class='photo-scroll'>"
@@ -614,6 +613,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
