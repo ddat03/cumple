@@ -97,6 +97,7 @@ st.markdown("""
         80% { border-color: #ffff00; }
         100% { border-color: #ff6b8a; }
     }
+    
     @keyframes neon-flicker {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
         text-shadow: 
@@ -105,6 +106,7 @@ st.markdown("""
             0 0 15px #ff1493,
             0 0 20px #ff1493;
     }
+    
     20%, 24%, 55% {
         text-shadow: none;
     }
@@ -113,6 +115,7 @@ st.markdown("""
         0% { filter: hue-rotate(0deg); }
         100% { filter: hue-rotate(360deg); }
     }
+    
     .heart-3d {
         position: relative;
         width: 200px;
@@ -274,7 +277,7 @@ st.markdown("""
         overflow: hidden;
         min-width: 400px;
         height: 500px;
-        flex: 1;
+        flex: none;
     }
     
     .photo-card:hover {
@@ -668,6 +671,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
