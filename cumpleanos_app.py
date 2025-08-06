@@ -97,6 +97,17 @@ st.markdown("""
         80% { border-color: #ffff00; }
         100% { border-color: #ff6b8a; }
     }
+    @keyframes neon-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 5px #ff1493,
+            0 0 10px #ff1493,
+            0 0 15px #ff1493,
+            0 0 20px #ff1493;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
     
     @keyframes rainbow {
         0% { filter: hue-rotate(0deg); }
@@ -523,8 +534,9 @@ def main_birthday_page():
         gif_base64 = base64.b64encode(f.read()).decode()
 
     st.markdown(f"""
-        <h2 style='text-align: center; color: #ffffff;
-            -webkit-text-stroke: 2px #00ffff; text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff; font-family: Georgia, serif; margin-bottom: 20px; '>
+        <h2 style='
+            text-align: center; color: #ffffff;
+            -webkit-text-stroke: 2px #ff1493; animation: neon-flicker 1.5s infinite alternate; font-family: Georgia, serif; margin-bottom: 20px; '>
             Con todo mi corazon 💖
         </h2>
         <div style="text-align: center; margin: 20px 0;">
@@ -653,6 +665,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
