@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st    
 import base64
 from PIL import Image, ImageDraw
 import io
@@ -8,7 +8,13 @@ import streamlit.components.v1 as components
 import mimetypes
 import os
 
-
+st.write("🔍 DEBUG: Verificando imagen de fondo")
+fondo_test = get_base64_image("images/11.jpeg")
+if fondo_test:
+    st.write("✅ Imagen cargada correctamente")
+else:
+    st.write("❌ Error cargando imagen")
+    
 def get_base64_image(image_path):
     """Convierte imagen local a base64 para usar en HTML"""
     if os.path.exists(image_path):
@@ -612,6 +618,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
