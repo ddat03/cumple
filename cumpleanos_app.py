@@ -538,7 +538,8 @@ def main_birthday_page():
     for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0;'></div>"
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 4px solid transparent;
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3); background-size: 400% 400%; animation: rainbow 3s ease infinite;'></div>"
     
     # Duplicar para loop infinito
     for foto in mis_fotos:
@@ -639,6 +640,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
