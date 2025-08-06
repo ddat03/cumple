@@ -516,11 +516,8 @@ def main_birthday_page():
     # Mostrar el HTML
     st.markdown(html_fotos, unsafe_allow_html=True)
     # Sección 3: Rasca y Gana
-    # Sección 3: Rasca y Gana
     st.markdown("""
-    <div class='content-section'>
-        <h2 class='section-title'>🎁 Sorpresa Musical Especial 🎁</h2>
-    </div>
+        <h2 class='section-title'>🎁 Esta cancion siempre me recuerda a nosotros 🎁</h2>
     """, unsafe_allow_html=True)
     
     if not st.session_state.scratch_revealed:
@@ -534,17 +531,15 @@ def main_birthday_page():
                 transition: all 0.3s ease;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             '>
-                <h3 style='color: #666; margin-bottom: 1rem;'>🔍 Haz clic para rascar</h3>
+                <h3 style='color: #666; margin-bottom: 1rem;'>Te quiero mucho mi amor</h3>
                 <div style='font-size: 4rem; margin: 1rem 0;'>🎁</div>
-                <p style='color: #888; font-size: 1.1rem;'>Tu canción especial te está esperando...</p>
-                <p style='color: #999; font-size: 0.9rem; margin-top: 1rem;'>¡Descubre la sorpresa!</p>
             </div>
         </div>
         """, unsafe_allow_html=True)
         
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            if st.button("🎵 ¡RASCAR SORPRESA! 🎵", type="primary", use_container_width=True):
+            if st.button("🎵 Presiona 🎵", type="primary", use_container_width=True):
                 st.session_state.scratch_revealed = True
                 st.balloons()
                 st.rerun()
@@ -552,31 +547,34 @@ def main_birthday_page():
     if st.session_state.scratch_revealed:
         st.markdown("""
         <div style='text-align: center; margin: 2rem 0;'>
-            <div class='qr-revealed' style='
+            <div style='
                 background: white;
                 border: 3px solid #ff6b8a;
                 border-radius: 15px;
                 padding: 2rem;
                 box-shadow: 0 15px 40px rgba(255, 107, 138, 0.2);
-                animation: fadeIn 1s ease-in;
             '>
-                <h3 style='color: #c44569; margin-bottom: 1rem;'>🎵 ¡Tu Canción del Corazón! 🎵</h3>
-                <p style='color: #666; margin-bottom: 2rem;'>Escanea este código QR para escuchar nuestra melodía especial 💕</p>
-                <div style='display: flex; justify-content: center; margin: 2rem 0;'>
-                    <div style='border: 3px solid #ff6b8a; padding: 2rem; border-radius: 15px; background: white;'>
-                        <div style='font-size: 6rem; margin: 0;'>📱</div>
-                        <p style='margin: 1rem 0 0 0; color: #666; font-weight: 600;'>Código QR Spotify</p>
-                        <p style='margin: 0.5rem 0 0 0; color: #999; font-size: 0.8rem;'>
-                            (Aquí va tu QR real)
-                        </p>
-                    </div>
-                </div>
-                <p style='color: #888; font-style: italic;'>
-                    "Esta canción siempre me recuerda a nosotros..." 💖
-                </p>
+                <h3 style='color: #c44569; margin-bottom: 2rem;'>🎵 ¡Nuestra Canción Especial! 🎵</h3>
             </div>
         </div>
         """, unsafe_allow_html=True)
+        
+        # VIDEO DE YOUTUBE EMBEBIDO
+        st.video("https://www.youtube.com/watch?v=Iiyp9rR9zko&list=RDIiyp9rR9zko&start_radio=1")
+        
+        st.markdown("""
+        <div style='text-align: center; margin: 2rem 0;'>
+            <p style='color: #888; font-style: italic; font-size: 1.2rem;'>
+                "Esta canción siempre me recuerda a nosotros..." 💖
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            if st.button("🔄 Ocultar video", use_container_width=True):
+                st.session_state.scratch_revealed = False
+                st.rerun()
         
         # Animación CSS
         st.markdown("""
@@ -614,6 +612,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
