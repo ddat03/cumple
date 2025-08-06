@@ -564,23 +564,52 @@ def main_birthday_page():
     # Lista de fotos (cambia por tus nombres reales)
 
     mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
-
+    mis_frases = [
+    "Belleza en cada rincón",
+    "Recuerdos inolvidables",
+    "Luz y sombra en armonía",
+    "Capturando momentos mágicos",
+    "Paisajes que enamoran",
+    "Miradas que hablan",
+    "Detalles que inspiran",
+    "Colores del alma",
+    "Historias sin palabras"
+]
     # Lista de frases correspondientes (una frase para cada foto)
     
     # Crear carrusel dinámicamente
     html_fotos = "<div class='photo-grid'><div class='photo-scroll'>"
     
-    for foto in mis_fotos:
+    # for foto in mis_fotos:
+    #     if os.path.exists(foto):
+    #         imagen_b64 = get_base64_image(foto)
+    #         html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
+    
+    # # Duplicar para loop infinito
+    # for foto in mis_fotos:
+    #     if os.path.exists(foto):
+    #         imagen_b64 = get_base64_image(foto)
+    #         html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
+    for foto, frase in zip(mis_fotos, mis_frases):
+    if os.path.exists(foto):
+        imagen_b64 = get_base64_image(foto)
+        html_fotos += f"""
+        <div class='photo-card'>
+            <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
+            <p class='photo-caption'>{frase}</p>
+        </div>
+        """
+
+# Repetir para el loop infinito
+    for foto, frase in zip(mis_fotos, mis_frases):
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
-    
-    # Duplicar para loop infinito
-    for foto in mis_fotos:
-        if os.path.exists(foto):
-            imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
-    
+            html_fotos += f"""
+            <div class='photo-card'>
+                <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
+                <p class='photo-caption'>{frase}</p>
+            </div>
+            """
     html_fotos += "</div></div>"
     
     # Mostrar el HTML
@@ -674,6 +703,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
