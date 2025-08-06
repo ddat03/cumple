@@ -82,13 +82,7 @@ st.markdown("""
         background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
         animation: shimmer 3s infinite;
     }
-    .photo-caption {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    }
+
     @keyframes shimmer {
         0%% { transform: translateX(-100%%) translateY(-100%%) rotate(45deg); }
         100%% { transform: translateX(100%%) translateY(100%%) rotate(45deg); }
@@ -602,7 +596,7 @@ def main_birthday_page():
             html_fotos += f"""
             <div class='photo-card'>
                 <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
-                <p class='photo-caption'>{frase}</p>
+                <p>{frase}</p>
             </div>
             """
 
@@ -613,7 +607,7 @@ def main_birthday_page():
             html_fotos += f"""
             <div class='photo-card'>
                 <img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'>
-                <p class='photo-caption'>{frase}</p>
+                <p>{frase}</p>
             </div>
             """
     html_fotos += "</div></div>"
@@ -709,6 +703,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
