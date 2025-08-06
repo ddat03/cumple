@@ -48,6 +48,17 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
+<script>
+    // Forzar actualización del background
+    setTimeout(function() {{
+        document.querySelector('[data-testid="stApp"]').style.background = 'url("{fondo_imagen}") center/cover no-repeat fixed';
+        document.querySelector('[data-testid="stApp"]').style.backgroundBlendMode = 'overlay';
+        document.querySelector('[data-testid="stApp"]').style.backgroundColor = 'rgba(255, 182, 193, 0.3)';
+    }}, 100);
+</script>
+""", unsafe_allow_html=True)
+
+
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
@@ -614,6 +625,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
