@@ -554,9 +554,7 @@ def main_birthday_page():
         <h2 style='
             text-align: center; color: #ffffff;  
             font-family: Georgia, serif; 
-            margin-bottom: 20px;
-            -webkit-text-stroke: 2px #39ff14;
-            text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14, 0 0 20px #39ff14;'> Porque siempre seras la mas hermosa</h2>
+            margin-bottom: 20px;'> Porque siempre seras la mas hermosa</h2>
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
