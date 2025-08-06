@@ -465,7 +465,7 @@ def main_birthday_page():
     
     # Sección 1: Mensaje de Amor
     with open("gif.gif", "rb") as f:
-    gif_base64 = base64.b64encode(f.read()).decode()
+        gif_base64 = base64.b64encode(f.read()).decode()
 
     st.markdown(f"""
         <h2 style='text-align: center; color: #c44569; font-family: Georgia, serif; margin-bottom: 20px;'>
@@ -606,6 +606,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
