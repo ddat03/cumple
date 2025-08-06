@@ -78,8 +78,7 @@ st.markdown("""
         top: -50%;
         left: -50%;
         width: 200%;
-        height: 200%
-        ;
+        height: 200%;
         background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
         animation: shimmer 3s infinite;
     }
@@ -99,18 +98,18 @@ st.markdown("""
     }
     
     @keyframes neon-flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% {
         text-shadow: 
             0 0 5px #ff1493,
             0 0 10px #ff1493,
             0 0 15px #ff1493,
             0 0 20px #ff1493;
-    }
+        }
     
     20%, 24%, 55% {
         text-shadow: none;
+        }
     }
-    
     @keyframes rainbow {
         0% { filter: hue-rotate(0deg); }
         100% { filter: hue-rotate(360deg); }
@@ -250,7 +249,7 @@ st.markdown("""
         margin: 2rem 0;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        width: 100%
+        width: 100%;
     }
 
     .photo-scroll {
@@ -673,6 +672,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
