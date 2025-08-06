@@ -39,9 +39,9 @@ fondo_imagen = get_base64_image("images/11.jpeg")
 st.markdown(f"""
 <style>
     .stApp {{
-        background: url('data:image/jpeg;base64,{fondo_imagen}') center/cover no-repeat fixed;
-        background-blend-mode: overlay;
-        background-color: rgba(255, 182, 193, 0.3);
+        background: url('data:image/jpeg;base64,{fondo_imagen}') center/cover no-repeat fixed !important;
+        background-blend-mode: overlay !important;
+        background-color: rgba(255, 182, 193, 0.3) !important;
     }}
 </style>
 """, unsafe_allow_html=True)
@@ -612,6 +612,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
