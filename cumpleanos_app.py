@@ -88,7 +88,20 @@ st.markdown("""
         0%% { transform: translateX(-100%%) translateY(-100%%) rotate(45deg); }
         100%% { transform: translateX(100%%) translateY(100%%) rotate(45deg); }
     }
+
+    @keyframes color-change {
+        0% { border-color: #ff6b8a; }
+        20% { border-color: #00ffff; }
+        40% { border-color: #39ff14; }
+        60% { border-color: #ff1493; }
+        80% { border-color: #ffff00; }
+        100% { border-color: #ff6b8a; }
+    }
     
+    @keyframes rainbow {
+        0% { filter: hue-rotate(0deg); }
+        100% { filter: hue-rotate(360deg); }
+    }
     .heart-3d {
         position: relative;
         width: 200px;
@@ -538,7 +551,7 @@ def main_birthday_page():
     for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 4px solid transparent; background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3); background-size: 400% 400%; animation: rainbow 3s ease infinite;'></div>"
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'></div>"
     
     # Duplicar para loop infinito
     for foto in mis_fotos:
@@ -639,6 +652,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
