@@ -447,7 +447,7 @@ def elegant_login():
 # Página principal con todas las secciones
 def main_birthday_page():
     # Overlay principal
-    st.markdown("<div class='main-overlay'>", unsafe_allow_html=True)
+    
     
     # Elementos flotantes
     #st.components.v1.html(generate_floating_elements(), height=0)
@@ -456,7 +456,7 @@ def main_birthday_page():
     # Título principal
     st.markdown("""
     <div class='content-section'>
-        <h1 class='section-title'>🌟 Tu Día Especial Ha Llegado 🌟</h1>
+        <h1 class='section-title'>🎂 Tu Día Especial Ha Llegado 🎂</h1>
         <p style='text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 3rem;'>
             Un día lleno de amor, sorpresas y momentos mágicos solo para ti ✨
         </p>
@@ -613,12 +613,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
-        # Botón para cerrar sesión en la barra lateral
-        with st.sidebar:
-            st.markdown("### 🚪 Opciones")
-            if st.button("Cerrar Sesión"):
-                st.session_state.authenticated = False
-                st.rerun()
+
 
 
 
