@@ -560,7 +560,7 @@ def main_birthday_page():
         """, unsafe_allow_html=True)
         
         # VIDEO DE YOUTUBE EMBEBIDO
-        st.video("https://www.youtube.com/watch?v=Iiyp9rR9zko&list=RDIiyp9rR9zko&start_radio=1")
+        st.video("https://www.youtube.com/watch?v=KECUActT8mY&list=RDKECUActT8mY&start_radio=1")
         
         st.markdown("""
         <div style='text-align: center; margin: 2rem 0;'>
@@ -612,6 +612,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
