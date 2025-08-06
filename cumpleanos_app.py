@@ -561,41 +561,22 @@ def main_birthday_page():
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
-    # mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
-    # # Lista de frases correspondientes (una frase para cada foto)
-    
-    # # Crear carrusel dinámicamente
-    # html_fotos = "<div class='photo-grid'><div class='photo-scroll'>"
-    
-    # for foto in mis_fotos:
-    #     if os.path.exists(foto):
-    #         imagen_b64 = get_base64_image(foto)
-    #         html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'></div>"
-    
-    # # Duplicar para loop infinito
-    # for foto in mis_fotos:
-    #     if os.path.exists(foto):
-    #         imagen_b64 = get_base64_image(foto)
-    #         html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'></div>"
-    
-    # html_fotos += "</div></div>"
-    # Lista de fotos (cambia por tus nombres reales)
     mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
+    # Lista de frases correspondientes (una frase para cada foto)
     
     # Crear carrusel dinámicamente
-    # Solo duplicar una vez (no dos veces)
     html_fotos = "<div class='photo-grid'><div class='photo-scroll'>"
     
     for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'></div>"
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;'></div>"
     
-    # Solo una copia extra para el loop
-    for foto in mis_fotos[:3]:  # Solo las primeras 3
+    # Duplicar para loop infinito
+    for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a; animation: color-change 3s ease-in-out infinite;'></div>"
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;'></div>"
     
     html_fotos += "</div></div>"
     
@@ -690,6 +671,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
