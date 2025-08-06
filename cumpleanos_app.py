@@ -410,7 +410,7 @@ def elegant_login():
                 <img src='{mi_foto_b64}' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%;'>
             </div>
             <h1 class='title-elegant'>Feliz Cumpleaños</h1>
-            <p class='subtitle-elegant'>Mi Amor Eterno ✨</p>
+            <p class='subtitle-elegant' style='color: #080808'>Mi Amor Eterno ✨</p>
             <p style='color: #080808; margin-bottom: 2rem; font-style: italic;'>
                 "Cada día contigo es una celebración,<br>
                 pero hoy es especialmente mágico"
@@ -635,6 +635,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
