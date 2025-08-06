@@ -531,37 +531,37 @@ def main_birthday_page():
     '>
     """, unsafe_allow_html=True)
     
-    # # Sección 1: Mensaje de Amor
-    # with open("gif.gif", "rb") as f:
-    #     gif_base64 = base64.b64encode(f.read()).decode()
+    # Sección 1: Mensaje de Amor
+    with open("gif.gif", "rb") as f:
+        gif_base64 = base64.b64encode(f.read()).decode()
 
-    # st.markdown(f"""
-    #     <h2 style='
-    #         text-align: center; color: #ffffff;
-    #         -webkit-text-stroke: 2px #ff1493; animation: neon-flicker 1.5s infinite alternate; font-family: Georgia, serif; margin-bottom: 20px; '>
-    #         Con todo mi corazon 💖
-    #     </h2>
-    #     <div style="text-align: center; margin: 20px 0;">
-    #         <img src="data:image/gif;base64,{gif_base64}" 
-    #              width="300" 
-    #              style="border-radius: 12px; 
-    #              border: 4px solid #bf00ff;
-    #              box-shadow: 0 0 20px #bf00ff, 0 0 40px #bf00ff;">
-    #     </div>
-    #     """, unsafe_allow_html=True)
+    st.markdown(f"""
+        <h2 style='
+            text-align: center; color: #ffffff;
+            -webkit-text-stroke: 2px #ff1493; animation: neon-flicker 1.5s infinite alternate; font-family: Georgia, serif; margin-bottom: 20px; '>
+            Con todo mi corazon 💖
+        </h2>
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="data:image/gif;base64,{gif_base64}" 
+                 width="300" 
+                 style="border-radius: 12px; 
+                 border: 4px solid #bf00ff;
+                 box-shadow: 0 0 20px #bf00ff, 0 0 40px #bf00ff;">
+        </div>
+        """, unsafe_allow_html=True)
 
     
-    # # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
-    # st.markdown(f"""
-    #     <h2 style='
-    #         text-align: center; color: #ffffff;  
-    #         font-family: Georgia, serif; 
-    #         margin-bottom: 20px;'> Porque siempre seras la mas hermosa</h2>
-    # """, unsafe_allow_html=True)
+    # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
+    st.markdown(f"""
+        <h2 style='
+            text-align: center; color: #ffffff;  
+            font-family: Georgia, serif; 
+            margin-bottom: 20px;'> Porque siempre seras la mas hermosa</h2>
+    """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
-    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg" ]
-        #mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
+
+    mis_fotos = ["images/1.jpeg", "images/2.jpeg", "images/5.jpeg", "images/6.jpeg", "images/7.jpeg", "images/8.jpeg", "images/9.jpeg", "images/10.jpeg", "images/11.jpeg" ]
 
     # Lista de frases correspondientes (una frase para cada foto)
     
@@ -571,13 +571,13 @@ def main_birthday_page():
     for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;'></div>"
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
     
     # Duplicar para loop infinito
     for foto in mis_fotos:
         if os.path.exists(foto):
             imagen_b64 = get_base64_image(foto)
-            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;'></div>"
+            html_fotos += f"<div class='photo-card'><img src='{imagen_b64}' style='height: 400px; border-radius: 15px; padding: 0; border: 5px solid #ff6b8a;animation: color-change 3s ease-in-out infinite;'></div>"
     
     html_fotos += "</div></div>"
     
@@ -672,6 +672,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
