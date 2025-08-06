@@ -492,7 +492,7 @@ def main_birthday_page():
     st.markdown(f"""
         <h1 style='
             font-family: Dancing Script, cursive;
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 600;
             text-align: center;
             margin-bottom: 2rem;
@@ -501,8 +501,8 @@ def main_birthday_page():
             -webkit-text-stroke: 3px #ff6b8a;
             filter: drop-shadow(0 0 10px rgba(255, 107, 138, 0.5);
         '>🎂 Tu Día Especial Ha Llegado 🎂</h1>
-        <p style='text-align: center; font-size: 1.3rem; color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin-bottom: 3rem;'>
+        <p style='text-align: center; font-size: 2.5rem; color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 4px 4px 8px rgba(0,0,0,0.5), 6px 6px 12px rgba(0,0,0,0.3); margin-bottom: 3rem;'>
             Felices 22 hermosos años mi vida✨
         </p>
          <img src='{imagen_11}' style='
@@ -653,6 +653,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
