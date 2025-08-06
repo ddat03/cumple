@@ -472,7 +472,7 @@ def main_birthday_page():
     
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
-    st.image("gif.gif", width=300)
+        st.image("gif.gif", width=300)
     # Sección 2: Galería de Recuerdos (con imágenes predeterminadas)
     st.markdown("""
     <div class='content-section'>
@@ -600,6 +600,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
