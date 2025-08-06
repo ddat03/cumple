@@ -484,7 +484,6 @@ def main_birthday_page():
             font-size: 2.8rem;
             font-weight: 600;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             text-align: center;
             margin-bottom: 2rem;
             color: #000000;
@@ -632,6 +631,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
