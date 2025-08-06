@@ -513,7 +513,7 @@ def main_birthday_page():
             color: #ffffff;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
             -webkit-text-stroke: 3px #ff6b8a;
-            filter: drop-shadow(0 0 10px rgba(255, 107, 138, 0.5);
+            filter: drop-shadow(0 0 10px rgba(255, 107, 138, 0.5));
         '>🎂 Tu Día Especial Ha Llegado 🎂</h1>
         <p style='
             text-align: center; font-size: 2.5rem; color: #ffffff;
@@ -673,6 +673,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
