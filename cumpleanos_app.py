@@ -158,7 +158,7 @@ st.markdown("""
     }
     
     .btn-elegant {
-        background: linear-gradient(45deg, #ff6b8a, #c44569);
+        background: rgba(255, 182, 193, 0.3);
         color: white;
         border: none;
         border-radius: 25px;
@@ -603,6 +603,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
