@@ -42,8 +42,6 @@ st.markdown(f"""
 <style>
     .stApp {{
         background: url('{fondo_imagen}') center/80%   no-repeat fixed;
-        background-blend-mode: overlay;
-        background-color: rgba(255, 182, 193, 0.3);
     }}
 </style>
 """, unsafe_allow_html=True)
@@ -637,6 +635,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
