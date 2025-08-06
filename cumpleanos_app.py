@@ -556,7 +556,9 @@ def main_birthday_page():
         <h2 style='
             text-align: center; color: #ffffff;  
             font-family: Georgia, serif; 
-            margin-bottom: 20px;'> Porque siempre seras la mas hermosa</h2>
+            margin-bottom: 20px;
+            -webkit-text-stroke: 2px #ff1493;
+            animation: neon-flicker 1.5s infinite alternate;'> Porque siempre seras la mas hermosa</h2>
     """, unsafe_allow_html=True)
     
     # Lista de fotos (cambia por tus nombres reales)
@@ -672,6 +674,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
