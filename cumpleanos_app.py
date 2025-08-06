@@ -43,6 +43,12 @@ st.markdown(f"""
         background-blend-mode: overlay;
         background-color: rgba(255, 182, 193, 0.3);
     }}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
     .main-overlay {
         background: rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
@@ -606,6 +612,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
