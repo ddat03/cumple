@@ -16,7 +16,6 @@ if 'bienvenida_mostrada' not in st.session_state:
 # Secuencia de bienvenida
 if not st.session_state.bienvenida_mostrada:
     st.balloons()
-    time.sleep(2)  # Pausa de 2 segundos
     st.snow()
     st.session_state.bienvenida_mostrada = True
 
@@ -1075,6 +1074,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
