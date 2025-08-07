@@ -37,7 +37,8 @@ st.set_page_config(
 # CSS personalizado con imagen de fondo y estilos elegantes
 # Agregar debug temporal
 fondo_imagen = get_base64_image("images/11.jpeg")
-
+st.balloons()
+st.snow()
 # CSS solo para el fondo
 st.markdown(f"""
 <style>
@@ -675,7 +676,7 @@ def elegant_login():
         """, unsafe_allow_html=True)
         
         # Botón para abrir modal (encima de la imagen)
-        if st.button("🔐 Ingresar la Fecha de tu cumple mi Pua", type="primary", use_container_width=True):
+        if st.button("🔐 Ingresar la Fecha de tu cumple mi Pua (ddMM)", type="primary", use_container_width=True):
             st.session_state.show_modal = True
             st.rerun()
         
@@ -1067,6 +1068,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
