@@ -2,3 +2,5 @@ streamlit
 Pillow
 qrcode
 numpy
+folium
+streamlit-folium
