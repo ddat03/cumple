@@ -1041,10 +1041,11 @@ def main_birthday_page():
     # Botón final de celebració
     
     
-    if st.button("🎆 ¡FELIZ CUMPLEAÑOS! 🎆", type="primary"):
+    if st.button("🎆 ¡MENSAJE FINAL! 🎆", type="primary"):
         st.balloons()
         st.snow()
-        st.success("¡Que todos tus sueños se hagan realidad! 💖✨🎂")
+        st.success("¡Que todos tus sueños se hagan realidad!, eres mi preciosa y quisiera que todo te fuera bien en la vida y lo lograras mi amor. Siempre estare apoyandote y solo cuando tu otra vez enserio me digas que ya 
+        no quieres volverme a ver te dejare, con amor Diego. Derechos reservados jaja. Y disculpame amor por no hacerlo de mejor manera pero dado el tiempo y cosas que han pasado lo hare mejor muy pronto. TE QUIERO  💖✨🎂")
     
     st.markdown("</div>", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
@@ -1057,6 +1058,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
