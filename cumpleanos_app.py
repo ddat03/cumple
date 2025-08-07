@@ -688,25 +688,7 @@ def elegant_login():
         
         # Modal flotante
         if st.session_state.show_modal:
-            st.markdown("""
-            <div style='
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: white;
-                padding: 3rem;
-                border-radius: 25px;
-                box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-                border: 3px solid #ff6b8a;
-                z-index: 9999;
-                text-align: center;
-                max-width: 300px;
-            '>
-                <h2 style='color: #c44569; margin-bottom: 1rem; font-size: 24px;''>🔐 Te quiero mucho mi amor</h2>
-                
-            </div>
-            """, unsafe_allow_html=True)
+
             
             # Input del código
             code = st.text_input("", placeholder="", type="password", key="modal_code")
@@ -1074,6 +1056,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
