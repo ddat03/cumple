@@ -37,8 +37,7 @@ st.set_page_config(
 # CSS personalizado con imagen de fondo y estilos elegantes
 # Agregar debug temporal
 fondo_imagen = get_base64_image("images/11.jpeg")
-st.balloons()
-st.snow()
+
 # CSS solo para el fondo
 st.markdown(f"""
 <style>
@@ -648,7 +647,8 @@ if 'scratch_revealed' not in st.session_state:
 # Función de autenticación elegante
 def elegant_login():
 
-    
+    st.balloons()
+    st.snow()
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -1068,6 +1068,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
