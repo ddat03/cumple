@@ -10,7 +10,8 @@ import os
 import folium
 from streamlit_folium import st_folium
 
-    
+st.balloons()
+st.snow()    
 def get_base64_image(image_path):
     """Convierte imagen local a base64 para usar en HTML"""
     if os.path.exists(image_path):
@@ -643,8 +644,7 @@ if 'authenticated' not in st.session_state:
     st.session_state.authenticated = False
 if 'scratch_revealed' not in st.session_state:
     st.session_state.scratch_revealed = False
-st.balloons()
-st.snow()
+
 # Función de autenticación elegante
 def elegant_login():
 
@@ -1067,6 +1067,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
