@@ -915,7 +915,6 @@ def main_birthday_page():
         {
             "nombre": "Nuestra primera cita 🌹",
             "descripcion": "Yambo",
-            "fecha": "22 de marzo, 2023",
             "lat": -2.9005,
             "lon": -79.0065,
             "color": "pink",
@@ -924,7 +923,6 @@ def main_birthday_page():
         {
             "nombre": "Primer beso 💋",
             "descripcion": "El parque donde sellamos nuestro amor con el primer beso",
-            "fecha": "5 de abril, 2023",
             "lat": -2.8995,
             "lon": -79.0045,
             "color": "red",
@@ -933,7 +931,6 @@ def main_birthday_page():
         {
             "nombre": "Donde dijiste que sí 💍",
             "descripcion": "El lugar más hermoso donde aceptaste ser mi novia",
-            "fecha": "20 de abril, 2023",
             "lat": -2.8985,
             "lon": -79.0075,
             "color": "gold",
@@ -942,7 +939,6 @@ def main_birthday_page():
         {
             "nombre": "Nuestro lugar favorito 🌟",
             "descripcion": "Donde vamos siempre que queremos estar juntos y felices",
-            "fecha": "Cada fin de semana",
             "lat": -2.9010,
             "lon": -79.0040,
             "color": "purple",
@@ -969,7 +965,6 @@ def main_birthday_page():
         popup_html = f"""
         <div style="width: 200px;">
             <h4 style="color: #d63384; margin-bottom: 10px;">{lugar['nombre']}</h4>
-            <p style="margin-bottom: 8px;"><strong>📅 Fecha:</strong> {lugar['fecha']}</p>
             <p style="margin-bottom: 0;"><em>{lugar['descripcion']}</em></p>
         </div>
         """
@@ -1016,6 +1011,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
