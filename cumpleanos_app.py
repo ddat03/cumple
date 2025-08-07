@@ -701,6 +701,7 @@ def elegant_login():
                         st.session_state.authenticated = True
                         st.session_state.show_modal = False
                         st.balloons()
+                        time.sleep(2) 
                         st.success("¡Código correcto! 💖")
                         time.sleep(1)
                         st.rerun()
@@ -1056,6 +1057,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
