@@ -908,8 +908,8 @@ def main_birthday_page():
             "nombre": "Donde nos conocimos 💫",
             "descripcion": "El café donde nuestros ojos se encontraron por primera vez",
             "fecha": "15 de marzo, 2023",
-            "lat": -2.9001,  # Ajusta estas coordenadas
-            "lon": -79.0059,
+            "lat": -0.927995,  # Ajusta estas coordenadas
+            "lon": -78.619734,
             "color": "red",
             "icon": "heart"
         },
@@ -1017,6 +1017,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
