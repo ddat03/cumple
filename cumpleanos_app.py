@@ -906,44 +906,93 @@ def main_birthday_page():
     lugares_especiales = [
         {
             "nombre": "Donde nos conocimos 💫",
-            "descripcion": "Dia despues de la mamanegra",
+            "descripcion": "Dia despues de la mamanegra, desde ahi quede enamorado",
             "lat": -0.927995,  # Ajusta estas coordenadas
             "lon": -78.619734,
             "color": "red",
             "icon": "heart"
         },
         {
-            "nombre": "Nuestra primera cita 🌹",
+            "nombre": "Primer lugar al que te quise hacer conocer",
             "descripcion": "Yambo",
-            "lat": -2.9005,
-            "lon": -79.0065,
+            "lat": -1.097589, 
+            "lon": -78.588221,
             "color": "pink",
             "icon": "cutlery"
         },
         {
-            "nombre": "Primer beso 💋",
-            "descripcion": "El parque donde sellamos nuestro amor con el primer beso",
-            "lat": -2.8995,
-            "lon": -79.0045,
+            "nombre": "Primeras interacciones ",
+            "descripcion": "En los conciertos de chicha y primera vez que me agarraste la espalda y cuello",
+            "lat": -0.221007,
+            "lon": -78.514865,
             "color": "red",
             "icon": "heart"
         },
         {
-            "nombre": "Donde dijiste que sí 💍",
-            "descripcion": "El lugar más hermoso donde aceptaste ser mi novia",
-            "lat": -2.8985,
-            "lon": -79.0075,
-            "color": "gold",
+            "nombre": "Primer Beso💋",
+            "descripcion": "En tu casa, fue el mejor dia en mucho tiempo", 
+            "lat": -0.208373,   
+            "lon": -78.503542,
+            "color": "red",
             "icon": "star"
         },
         {
-            "nombre": "Nuestro lugar favorito 🌟",
-            "descripcion": "Donde vamos siempre que queremos estar juntos y felices",
-            "lat": -2.9010,
-            "lon": -79.0040,
+            "nombre": "Nuestro lugar favorito 1 🌟",
+            "descripcion": "Donde vamos siempre que queremos estar juntos y cansarnos mucho",
+            "lat": -0.220126,  
+            "lon": -78.511654,
+            "color": "gold",
+            "icon": "home"
+        },
+        {
+            "nombre": "Nuestro primer viaje 🌟",
+            "descripcion": "Yo me quede en salcedo y tu te fuiste a ese lugar raro",
+            "lat": -1.045375,   
+            "lon": -78.591665,
             "color": "purple",
             "icon": "home"
-        }
+        },
+        {
+            "nombre": "Nuestro primer desfile ",
+            "descripcion": "No fue en la mama negra pero si en pillaro, Te quiero",
+            "lat": -1.176611,    
+            "lon": -78.550662,
+            "color": "green",
+            "icon": "home"
+        },
+        {
+            "nombre": "Nuestro primer baile ",
+            "descripcion": "No se bailar bien pero ese dia lo disfrute contigo mi vida",
+            "lat": -0.202935,     
+            "lon": -78.491086,
+            "color": "blue",
+            "icon": "home"
+        },
+        {
+            "nombre": "Primer lugar que quiero visitar contigo ",
+            "descripcion": "Se que te encanta el Tena misahaualli, quiesiera visitarlo contigo",
+            "lat": -0.324214,      
+            "lon": -78.481604,
+            "color": "purple",
+            "icon": "home"
+        },
+        {
+            "nombre": "Lugar al que quisiera que un dia me llevaras",
+            "descripcion": "Quisiera ser todo contigo mi vida, conocer amigos y mas familiares",
+            "lat": -0.338517,       
+            "lon": -77.815271,
+            "color": "blue",
+            "icon": "home"
+        },
+        {
+            "nombre": "Lugar en el que quiero verte como eva",
+            "descripcion": "Me encantas mucho amor quisiera visitar ese lugar y banarnos juntos mi vida",
+            "lat": -0.377364,       
+            "lon": -78.142157,
+            "color": "red",
+            "icon": "home"
+        },
+
     ]
     
     # Crear el mapa
@@ -1011,6 +1060,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
