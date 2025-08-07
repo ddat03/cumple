@@ -996,7 +996,14 @@ def main_birthday_page():
     ]
     
     # Crear el mapa
-    st.subheader("🗺️ Nuestros Lugares Especiales")
+    st.markdown(f"""
+        <h2 style='
+            text-align: center; color: #ffffff;  
+            font-family: Georgia, serif; 
+            margin-bottom: 20px;
+            -webkit-text-stroke: 2px #ff1493;
+            animation: neon-flicker 1.5s infinite alternate;'> Lugares Especiales contigo</h2>
+    """, unsafe_allow_html=True)
     
     # Calcular centro del mapa
     centro_lat = sum([lugar["lat"] for lugar in lugares_especiales]) / len(lugares_especiales)
@@ -1060,6 +1067,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
