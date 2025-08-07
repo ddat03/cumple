@@ -7,7 +7,8 @@ import random
 import streamlit.components.v1 as components
 import mimetypes
 import os
-
+import folium
+from streamlit_folium import st_folium
 
     
 def get_base64_image(image_path):
@@ -400,6 +401,226 @@ st.markdown("""
     .stButton > button[kind="primary"]:active {
         transform: translateY(0px) !important;
     }
+
+
+    .mapa-container {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
+        padding: 30px;
+        border-radius: 20px;
+        margin: 30px 0;
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .mapa-titulo {
+        color: #d63384;
+        text-align: center;
+        font-family: 'Georgia', serif;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(45deg, #ff6b6b, #d63384, #ff69b4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    iframe[title*="streamlit_folium"] {
+        border: 3px solid #ff69b4;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+        background: white;
+    }
+    
+    .lugares-lista {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 0;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 105, 180, 0.3);
+    }
+    
+    .lugar-item {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        padding: 15px;
+        border-radius: 12px;
+        margin: 12px 0;
+        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+        border-left: 4px solid #d63384;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .lugar-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+    }
+    
+    .lugar-nombre {
+        color: #d63384;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 8px;
+        font-family: 'Georgia', serif;
+    }
+    
+    .lugar-fecha {
+        color: #ad2a5a;
+        font-weight: bold;
+        font-size: 0.95em;
+        margin-bottom: 5px;
+    }
+    
+    .lugar-descripcion {
+        color: #495057;
+        font-style: italic;
+        line-height: 1.4;
+    }
+    
+    .estadisticas-amor {
+        background: linear-gradient(135deg, #ffeef8 0%, #f8d7da 50%, #fce4ec 100%);
+        padding: 25px;
+        border-radius: 15px;
+        margin: 25px 0;
+        border: 2px solid rgba(255, 105, 180, 0.2);
+        text-align: center;
+    }
+    
+    .estadistica-item {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        margin: 10px;
+        box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
+        border-top: 3px solid #ff69b4;
+        display: inline-block;
+        min-width: 150px;
+    }
+    
+    .estadistica-numero {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #d63384;
+        margin-bottom: 5px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .estadistica-label {
+        color: #6c757d;
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+    
+    .estadistica-delta {
+        color: #ff69b4;
+        font-size: 0.9em;
+        font-style: italic;
+        margin-top: 5px;
+    }
+    
+    .mensaje-final {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        padding: 30px;
+        border-radius: 20px;
+        margin: 30px 0;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .mensaje-titulo {
+        color: #d63384;
+        font-size: 2em;
+        margin-bottom: 15px;
+        font-family: 'Georgia', serif;
+    }
+    
+    .mensaje-texto {
+        color: #495057;
+        font-style: italic;
+        line-height: 1.6;
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+    
+    .mensaje-firma {
+        color: #d63384;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    /* Efectos de corazones flotantes */
+    .corazones-flotantes {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .corazones-flotantes::before {
+        content: '💕';
+        position: absolute;
+        top: -10px;
+        left: 10%;
+        font-size: 20px;
+        animation: flotar 6s infinite ease-in-out;
+        opacity: 0.7;
+    }
+    
+    .corazones-flotantes::after {
+        content: '💖';
+        position: absolute;
+        top: -15px;
+        right: 15%;
+        font-size: 25px;
+        animation: flotar 8s infinite ease-in-out reverse;
+        opacity: 0.6;
+    }
+    
+    @keyframes flotar {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-20px) rotate(10deg);
+        }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .mapa-container {
+            padding: 20px;
+            margin: 20px 10px;
+        }
+        
+        .mapa-titulo {
+            font-size: 2em;
+        }
+        
+        .estadistica-item {
+            display: block;
+            margin: 10px 0;
+        }
+        
+        .mensaje-final {
+            padding: 20px;
+            margin: 20px 10px;
+        }
+    }
+    
+    .fade-in {
+        animation: fadeIn 1s ease-in;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
 </style>
 """, unsafe_allow_html=True)
 
@@ -681,7 +902,102 @@ def main_birthday_page():
         </style>
         """, unsafe_allow_html=True)
         
+    # Datos de los lugares especiales (PERSONALIZA ESTOS DATOS)
+    lugares_especiales = [
+        {
+            "nombre": "Donde nos conocimos 💫",
+            "descripcion": "El café donde nuestros ojos se encontraron por primera vez",
+            "fecha": "15 de marzo, 2023",
+            "lat": -2.9001,  # Ajusta estas coordenadas
+            "lon": -79.0059,
+            "color": "red",
+            "icon": "heart"
+        },
+        {
+            "nombre": "Nuestra primera cita 🌹",
+            "descripcion": "La pizzería donde compartimos nuestra primera comida juntos",
+            "fecha": "22 de marzo, 2023",
+            "lat": -2.9005,
+            "lon": -79.0065,
+            "color": "pink",
+            "icon": "cutlery"
+        },
+        {
+            "nombre": "Primer beso 💋",
+            "descripcion": "El parque donde sellamos nuestro amor con el primer beso",
+            "fecha": "5 de abril, 2023",
+            "lat": -2.8995,
+            "lon": -79.0045,
+            "color": "red",
+            "icon": "heart"
+        },
+        {
+            "nombre": "Donde dijiste que sí 💍",
+            "descripcion": "El lugar más hermoso donde aceptaste ser mi novia",
+            "fecha": "20 de abril, 2023",
+            "lat": -2.8985,
+            "lon": -79.0075,
+            "color": "gold",
+            "icon": "star"
+        },
+        {
+            "nombre": "Nuestro lugar favorito 🌟",
+            "descripcion": "Donde vamos siempre que queremos estar juntos y felices",
+            "fecha": "Cada fin de semana",
+            "lat": -2.9010,
+            "lon": -79.0040,
+            "color": "purple",
+            "icon": "home"
+        }
+    ]
     
+    # Crear el mapa
+    st.subheader("🗺️ Nuestros Lugares Especiales")
+    
+    # Calcular centro del mapa
+    centro_lat = sum([lugar["lat"] for lugar in lugares_especiales]) / len(lugares_especiales)
+    centro_lon = sum([lugar["lon"] for lugar in lugares_especiales]) / len(lugares_especiales)
+    
+    # Crear mapa
+    m = folium.Map(
+        location=[centro_lat, centro_lon], 
+        zoom_start=15,
+        tiles="CartoDB Voyager"
+    )
+    
+    # Agregar marcadores
+    for lugar in lugares_especiales:
+        popup_html = f"""
+        <div style="width: 200px;">
+            <h4 style="color: #d63384; margin-bottom: 10px;">{lugar['nombre']}</h4>
+            <p style="margin-bottom: 8px;"><strong>📅 Fecha:</strong> {lugar['fecha']}</p>
+            <p style="margin-bottom: 0;"><em>{lugar['descripcion']}</em></p>
+        </div>
+        """
+        
+        folium.Marker(
+            location=[lugar["lat"], lugar["lon"]],
+            popup=folium.Popup(popup_html, max_width=220),
+            tooltip=lugar["nombre"],
+            icon=folium.Icon(
+                color=lugar["color"], 
+                icon=lugar["icon"], 
+                prefix='fa'
+            )
+        ).add_to(m)
+    
+    # Conectar puntos con línea
+    coordenadas = [[lugar["lat"], lugar["lon"]] for lugar in lugares_especiales]
+    folium.PolyLine(
+        coordenadas,
+        color="hotpink",
+        weight=3,
+        opacity=0.8,
+        popup="El camino de nuestro amor 💕"
+    ).add_to(m)
+    
+    # Mostrar mapa
+    st_folium(m, width=700, height=500)
     # Botón final de celebració
     
     
@@ -692,6 +1008,8 @@ def main_birthday_page():
     
     st.markdown("</div>", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
+
+
 # Ejecutar la aplicación
 if __name__ == "__main__":
     if not st.session_state.authenticated:
@@ -699,6 +1017,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
