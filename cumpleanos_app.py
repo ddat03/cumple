@@ -647,8 +647,7 @@ if 'scratch_revealed' not in st.session_state:
 # Función de autenticación elegante
 def elegant_login():
 
-    st.balloons()
-    st.snow()
+    
     # Contenedor principal centrado
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -657,7 +656,8 @@ def elegant_login():
         # Agregar estado para el modal
         if 'show_modal' not in st.session_state:
             st.session_state.show_modal = False
-        
+        st.balloons()
+        st.snow()
         st.markdown(f"""
         <div class='login-container'>
             <div class='heart-3d' style='cursor: pointer;'>
@@ -1068,6 +1068,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
