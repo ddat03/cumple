@@ -10,6 +10,16 @@ import os
 import folium
 from streamlit_folium import st_folium
 
+if 'bienvenida_mostrada' not in st.session_state:
+    st.session_state.bienvenida_mostrada = False
+
+# Secuencia de bienvenida
+if not st.session_state.bienvenida_mostrada:
+    st.balloons()
+    time.sleep(2)  # Pausa de 2 segundos
+    st.snow()
+    st.session_state.bienvenida_mostrada = True
+
 def get_base64_image(image_path):
     """Convierte imagen local a base64 para usar en HTML"""
     if os.path.exists(image_path):
@@ -1065,6 +1075,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
