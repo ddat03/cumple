@@ -906,8 +906,7 @@ def main_birthday_page():
     lugares_especiales = [
         {
             "nombre": "Donde nos conocimos 💫",
-            "descripcion": "El café donde nuestros ojos se encontraron por primera vez",
-            "fecha": "15 de marzo, 2023",
+            "descripcion": "Dia despues de la mamanegra",
             "lat": -0.927995,  # Ajusta estas coordenadas
             "lon": -78.619734,
             "color": "red",
@@ -915,7 +914,7 @@ def main_birthday_page():
         },
         {
             "nombre": "Nuestra primera cita 🌹",
-            "descripcion": "La pizzería donde compartimos nuestra primera comida juntos",
+            "descripcion": "Yambo",
             "fecha": "22 de marzo, 2023",
             "lat": -2.9005,
             "lon": -79.0065,
@@ -1017,6 +1016,7 @@ if __name__ == "__main__":
     else:
         main_birthday_page()
         
+
 
 
 
